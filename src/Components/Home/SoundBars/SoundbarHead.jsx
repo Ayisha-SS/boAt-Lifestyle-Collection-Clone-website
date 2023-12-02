@@ -15,8 +15,8 @@ function SoundbarHead() {
             </div>
 
             
-            <div className="w-1/2 ">
-                <img src="src\assets\images\wirless-spkr\img_5_desktop_993080a5-771b-4fbd-961a-a4dae9e55838_3000x.png" alt="" />
+            <div className="mt-60">
+                <img src="src\assets\images\sound-bar\img_7_desktop_acb84546-2e5d-4f69-bd03-3fd2ca9740db_3000x.png" alt="" />
             </div>
             
         </div>

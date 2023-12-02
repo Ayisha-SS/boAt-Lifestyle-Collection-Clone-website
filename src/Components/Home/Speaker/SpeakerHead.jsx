@@ -3,7 +3,7 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 function SpeakerHead() {
   return (
-    <div className='flex  '>
+    <div className='flex mt-2 '>
             <div className="pt-40 pb-28 w-1/2">
                 <div className='tracking-wider'>
                     <h2 className='w- text-7xl font-thin whitespace-nowrap'>Wireless <span className='font-bold'>Speakers</span></h2>

@@ -1,0 +1,42 @@
+[
+    {
+        "status":"Engraving Available",
+        "sound":"60W Rms Sound",
+        "image":"",
+        "name":"Aavante Bar 1150",
+        "color":"Col+5",
+        "offer":"&#8377;5,299",
+        "price":"&#8377;9,990",
+        "off":"47% off"
+    },
+    {
+        "status":"Engraving Available",
+        "sound":"60W Rms Sound",
+        "image":"",
+        "name":"Aavante Bar Rhythm",
+        "color":"Col+5",
+        "offer":"&#8377;4,999",
+        "price":"&#8377;7,990",
+        "off":"37% off"
+    },
+    {
+        "status":"Engraving Available",
+        "sound":"160W Rms Sound",
+        "image":"",
+        "name":"Aavante Bar Raga",
+        "color":"Col+5",
+        "offer":"&#8377;5,499",
+        "price":"&#8377;15,990",
+        "off":"66% off"
+    },
+    {
+        "status":"Engraving Available",
+        "sound":"16W Rms Sound",
+        "image":"",
+        "name":"Aavante Bar 558",
+        "color":"Col+5",
+        "offer":"&#8377;2,199",
+        "price":"&#8377;3,990",
+        "off":"45% off"
+    }
+]

@@ -5,9 +5,9 @@ function EarbudsHead() {
   return (
     <>
         <div className='flex  '>
-            <div className="pt-40 pb-28 w-1/2">
+            <div className="mt-40 mb-28 w-1/2">
                 <div className='tracking-wider'>
-                    <h2 className='w- text-8xl font-thin'>True Wireless <span className='font-bold'>Earbuds</span></h2>
+                    <h2 className='text-8xl font-thin'>True Wireless <span className='font-bold'>Earbuds</span></h2>
                 </div>
                 <h4 className='text-3xl mt-2 font-medium tracking-wider'>Starting from <span className='font-extrabold'>&#8377;999&lowast;</span></h4>
                 <div className='mt-2'>
