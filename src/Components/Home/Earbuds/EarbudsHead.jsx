@@ -17,7 +17,7 @@ function EarbudsHead() {
 
             
             <div className="w-1/2 ">
-                <img src="src\assets\images\airpodes\img_1_desktop_4c81b094-8292-4d54-8b20-5eb3b823a4e6_2988x.png" alt="" />
+                <img src="src\assets\images\airpodes\img-1.png" alt="Airpodes" />
             </div>
             
         </div>

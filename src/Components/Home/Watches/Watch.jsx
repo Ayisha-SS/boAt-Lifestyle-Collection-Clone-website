@@ -4,7 +4,7 @@ import WatchItem from './WatchItem'
 
 function Watch() {
   return (
-    <div className='bg-gradient-to-b from-[#ffffff] to-[#fff1d6] container'>
+    <div className='bg-gradient-to-b from-[#ffffff] to-[#fff1d6] container pb-2'>
         <WatchHead/>
         <WatchItem/>
     </div>

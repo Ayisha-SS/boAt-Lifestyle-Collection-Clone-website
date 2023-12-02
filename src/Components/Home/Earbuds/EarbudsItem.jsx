@@ -19,7 +19,7 @@ function EarbudsItem() {
                     <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>60 Hours Playback</span>
                 </div>
                 <div className="h-80 w-[100%] rounded-t-2x ">
-                    <img src="src\assets\images\airpodes\airpode-131.jpeg" alt="Airpode-131" className='w-[100%]'/>
+                    <img src="src\assets\images\airpodes\AD-131.jpg" alt="Airpode-131" className='w-[100%]'/>
                 </div>
                 <div className="px-2.5 py-6 bg-slate-100">
                     <div className=" text-4">
@@ -45,7 +45,7 @@ function EarbudsItem() {
                     <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>42 Hours Playback</span>
                 </div>
                 <div className="h-80 w-[100%] rounded-t-2x ">
-                    <img src="src\assets\images\airpodes\141.jpeg" alt="Airpode-131" className='w-[100%]'/>
+                    <img src="src\assets\images\airpodes\AD-141.jpg" alt="Airpode-141" className='w-[100%]'/>
                 </div>
                 <div className="px-2.5 py-6 bg-slate-100">
                     <div className=" text-4">
@@ -71,7 +71,7 @@ function EarbudsItem() {
                     <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>45 Hours Playback</span>
                 </div>
                 <div className="h-80 w-[100%] rounded-t-2x ">
-                    <img src="src\assets\images\airpodes\131-pr0.jpeg" alt="Airpode-131" className='w-[100%]'/>
+                    <img src="src\assets\images\airpodes\AD-131-PRO.jpg" alt="Airpode-131-PRO" className='w-[100%]'/>
                 </div>
                 <div className="px-2.5 py-6 bg-slate-100">
                     <div className=" text-4">
@@ -97,7 +97,7 @@ function EarbudsItem() {
                     <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>40 Hours Playback</span>
                 </div>
                 <div className="h-80 w-[100%] rounded-t-2x ">
-                    <img src="src\assets\images\airpodes\161.jpeg" alt="Airpode-131" className='w-[100%]'/>
+                    <img src="src\assets\images\airpodes\AD_161.jpg" alt="Airpode-161" className='w-[100%]'/>
                 </div>
                 <div className="px-2.5 py-6 bg-slate-100">
                     <div className=" text-4">
