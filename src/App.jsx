@@ -13,8 +13,8 @@ function App() {
       <MetaTag/>
       <NavOrder/>
       <NavBar/>
-      {/* <HomLink/> */}
-      <ViewAll/>
+      <HomLink/>
+      {/* <ViewAll/> */}
     </>
   )
 }

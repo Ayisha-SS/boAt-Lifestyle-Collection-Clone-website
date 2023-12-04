@@ -34,8 +34,8 @@ function EarbudsItem() {
                             <p>{item.color}</p>
                         </div>
                         <div className='flex pt-2 gap-1 mt-1.5 mb-2.5'>
-                        <p className='text-sm mb-1 font-bold'>{item.offer}</p>
-                        <p className='mb-1 text-xs text-gray-400'>{item.price}</p>
+                        <p className='text-sm mb-1 font-bold'>&#8377;{item.offer}</p>
+                        <p className='mb-1 text-xs text-gray-400'>&#8377;{item.price}</p>
                         <p className='text-xs pr-1.5 text-green-400'>{item.off}</p>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import React from 'react'
 function NavDropdown() {
   return (
     <div className='bg-white  p-6 absolute top-28 shadow-lg hidden '>
-        <ul className='text-sm font-thin  '>
+        <ul className='text-sm font-thin  hover:flex flex-col'>
 
             <li className='hover:opacity-25'>Daily Deals</li>
             <li className='hover:opacity-25'>Do What FloAts Your boAt</li>

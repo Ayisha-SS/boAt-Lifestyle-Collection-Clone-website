@@ -5,8 +5,8 @@
         "image":"",
         "name":"Airdopes",
         "color":"Col+5",
-        "offer":"&#8377;899",
-        "price":"&#8377;2990",
+        "offer":899,
+        "price":299,
         "off":"70% off"
     },
     {
@@ -15,8 +15,8 @@
         "image":"",
         "name":"Airdopes",
         "color":"Col+5",
-        "offer":"&#8377;899",
-        "price":"&#8377;2990",
+        "offer":899,
+        "price":2990,
         "off":"70% off"
     },
     {
@@ -25,8 +25,8 @@
         "image":"",
         "name":"Airdopes",
         "color":"Col+5",
-        "offer":"&#8377;899",
-        "price":"&#8377;2990",
+        "offer":899,
+        "price":2990,    
         "off":"70% off"
     },
     {
@@ -35,8 +35,9 @@
         "image":"",
         "name":"Airdopes",
         "color":"Col+5",
-        "offer":"&#8377;899",
-        "price":"&#8377;2990",
+        "offer":899,
+        "price":2990,
         "off":"70% off"
     }
+    
 ]
