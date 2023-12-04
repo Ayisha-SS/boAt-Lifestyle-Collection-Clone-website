@@ -11,7 +11,7 @@ function EarbudsItem() {
         <div className="flex justify-between mb-3 ">
             <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
             <h1 className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></h1>
-            <Link to="/a">asdffd</Link>
+            {/* <Link to="/a">asdffd</Link> */}
         </div>
 
         <div className="flex gap-4 ">

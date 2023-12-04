@@ -9,11 +9,11 @@ function EarBuds() {
     <div className='bg-gradient-to-b from-[#edfefe] to-[#eeffff] container pb-2'>
         <EarbudsHead/>
         <EarbudsItem/>
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Routes>
             <Route path='a' element={<ViewAll />}/>
           </Routes>         
-        </BrowserRouter>
+        </BrowserRouter> */}
     </div>
   )
 }

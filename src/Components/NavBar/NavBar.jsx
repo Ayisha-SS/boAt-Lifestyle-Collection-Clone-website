@@ -9,7 +9,7 @@ import NavDropdown from './NavDropdown';
 function NavBar() {
   return (
     <>
-    <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)]'>
+    <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] fixed z-10 w-[100%]'>
       <div className='w-24 p-1 mr-10'>
         <Link to='/'><img src={companyLogo} alt="Logo" /></Link>
       </div>
