@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { FaAngleDown,FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import companyLogo from '../../assets/images/boat.jpeg';
@@ -9,7 +10,7 @@ import NavDropdown from './NavDropdown';
 function NavBar() {
   return (
     <>
-    <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] fixed z-10 w-[100%]'>
+    <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
       <div className='w-24 p-1 mr-10'>
         <Link to='/'><img src={companyLogo} alt="Logo" /></Link>
       </div>
@@ -19,6 +20,8 @@ function NavBar() {
         <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>boAt Truly Yours</Link>
         <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Gift with boAt</Link>
         <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Corporate Orders</Link>
+        {/* <Link to="/home">Home</Link>
+        <Link to="/about">About</Link> */}
         <Link to="more" spy={true} smooth={true} duration={500} className='flex  relative hover:font-extrabold'>More<FaAngleDown /><NavDropdown />
 </Link>
       </nav>

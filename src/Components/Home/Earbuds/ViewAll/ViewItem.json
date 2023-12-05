@@ -14,7 +14,14 @@
         "offer":"70% off",
         "featr1":"13mm drivers",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Black",
+        "best for":"Sports",
+        "noise cancellation":"Active",
+        "playback":"40 Hrs",
+        "features":"boAt Signature Sound",
+        "availability":"In stock"
     },
     {
         "status":"200 OFF ON BIG200",
@@ -31,7 +38,14 @@
         "offer":"71% off",
         "featr1":"Clear calling",
         "featr2":"ASAP Charge",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Blue",
+        "best for":"Travel",
+        "noise cancellation":"Active",
+        "playback":"50 Hrs",
+        "features":"Noise Cancellation",
+        "availability":"In stock"
     },
     {
         "status":"Engraving Available",
@@ -48,7 +62,14 @@
         "offer":"60% off",
         "featr1":"13mm drivers",
         "featr2":"ASAP Charge",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"White",
+        "best for":"Gaming",
+        "noise cancellation":"Environment",
+        "playback":"60 Hrs",
+        "features":"Fast Charging",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -65,7 +86,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Black",
+        "best for":"Travel",
+        "noise cancellation":"Active",
+        "playback":"20 Hrs",
+        "features":"Noise Cancellation",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -82,7 +110,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Gray",
+        "best for":"Music Lovers",
+        "noise cancellation":"Environment",
+        "playback":"15 Hrs",
+        "features":"Low Latency Audio",
+        "availability":"In stock"
     },
     {
         "status":"Engraving Available",
@@ -99,7 +134,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"Gaming Earbuds",
+        "color":"white",
+        "best for":"Music Lovers",
+        "noise cancellation":"Active",
+        "playback":"30 Hrs",
+        "features":"Instant Pairing",
+        "availability":"In stock"
     },
     {
         "status":"Engraving Available",
@@ -116,7 +158,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"Gaming Earbuds",
+        "color":"Orange",
+        "best for":"Gaming",
+        "noise cancellation":"Active",
+        "playback":"90 Hrs",
+        "features":"boAt Signature Sound",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -133,7 +182,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Blue",
+        "best for":"Sports",
+        "noise cancellation":"Environment",
+        "playback":"70 Hrs",
+        "features":"ASAP Fast Charge",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -150,7 +206,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Yellow",
+        "best for":"Gaming",
+        "noise cancellation":"Active",
+        "playback":"40 Hrs",
+        "features":"Instant Pairing",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -167,7 +230,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"Gaming Earbuds",
+        "color":"Green",
+        "best for":"Travel",
+        "noise cancellation":"Active",
+        "playback":"60 Hrs",
+        "features":"boAt Signature Sound",
+        "availability":""
     },
     {
         "status":"Engraving Available",
@@ -184,7 +254,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"True Wireless Earbuds",
+        "color":"Red",
+        "best for":"Sports",
+        "noise cancellation":"Environment",
+        "playback":"70 Hrs",
+        "features":"Fast Charging",
+        "availability":"In stock"
     },
     {
         "status":"Engraving Available",
@@ -201,7 +278,14 @@
         "offer":"60% off",
         "featr1":"ASAP Charge",
         "featr2":"IWP Technology",
-        "image":""
+        "image":"",
+        "category":"Gaming Earbuds",
+        "color":"Purple",
+        "best for":"Music Lovers",
+        "noise cancellation":"Environment",
+        "playback":"90 Hrs",
+        "features":"ASAP Fast Charge",
+        "availability":"In stock"
     }
    
    
