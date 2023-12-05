@@ -1,6 +1,5 @@
 import React from 'react'
 import Filter from "./Filter"
-import NavBar from '../../../NavBar/NavBar'
 import Sort from './Sort'
 import { Link } from 'react-router-dom'
 import { MdKeyboardArrowRight } from "react-icons/md";

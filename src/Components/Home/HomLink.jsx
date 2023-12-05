@@ -6,8 +6,7 @@ import Headphone from './Headphones/Headphone'
 import Speaker from './Speaker/Speaker'
 import PartySpeaker from './PartySpeaker/PartySpeaker'
 import SoundBar from './SoundBars/SoundBar'
-import Footer from './Footer/Footer'
-
+import Footer from "./Footer/Footer"
 function HomLink() {
   return (
     <div className=''>

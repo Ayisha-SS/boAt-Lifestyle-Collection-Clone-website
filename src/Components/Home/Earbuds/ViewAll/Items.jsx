@@ -55,8 +55,6 @@ function Items() {
             )
         })}
         
-
-
     </div>
   )
 }

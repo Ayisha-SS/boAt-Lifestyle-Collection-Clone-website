@@ -2,7 +2,7 @@ import React from 'react'
 
 function WirelessEarphones() {
   return (
-    <div className='mb-12'>
+    <div className='mb-14'>
         <h3 className='font-extrabold text-base text-[#1A2024] pb-4'>Wireless Earphones</h3>
         <div className='pb-4'>
             <h5 className='text-sm text-[#1A2024] pb-2 '>Shop by Features</h5>

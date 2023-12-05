@@ -1,13 +1,14 @@
 import React from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./Watch.json"
+import items from "./Watch.json";
+import {Link} from "react-router-dom";
 
 function WatchItem() {
   return (
     <div className='pt-5'>
       <div className="flex justify-between mb-3 ">
         <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
-        <b className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16} /></b>
+        <Link to="smart-watch" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
       </div>
 
       <div className="flex gap-4 ">

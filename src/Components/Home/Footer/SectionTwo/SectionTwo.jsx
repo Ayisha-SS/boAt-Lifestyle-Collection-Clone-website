@@ -13,6 +13,7 @@ import CarAccessories from './CarAccessories'
 import TrebelRange from './TrebelRange'
 import Chargers from './Chargers'
 import Cables from './Cables'
+import Powerbanks from './Powerbanks'
 
 function SectionTwo() {
   return (
@@ -34,6 +35,7 @@ function SectionTwo() {
         <LimitedEditions/>
         <CarAccessories/>
         <TrebelRange/>
+        <Powerbanks/>
       </div>
       <div className='w-[25%]'>
         <Chargers/>
