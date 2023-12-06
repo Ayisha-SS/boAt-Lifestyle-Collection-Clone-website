@@ -11,6 +11,9 @@ import AllWatch from './Components/Home/Watches/AllWatch/AllWatch';
 import AllBands from './Components/Home/Neckbands/AllBands/AllBands';
 import AllheadPhones from './Components/Home/Headphones/AllheadPhones/AllheadPhones';
 import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
+import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
+import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
+import PopUp from './Components/PopUp/PopUp';
 
 
 function App() {
@@ -28,8 +31,11 @@ function App() {
           <Route path='neckbands' element={<AllBands/>}/>
           <Route path='headphones' element={<AllheadPhones/>}/>
           <Route path='wireless-speaker' element={<AllSpeaker/>}/>
+          <Route path='party-speaker' element={<AllprtySpkr/>}/>
+          <Route path='soundbar' element={<AllsoundBar/>}/>
         </Routes>
       </BrowserRouter>
+      
       
       <Chatbot/>
     </>
