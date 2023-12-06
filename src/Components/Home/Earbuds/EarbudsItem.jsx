@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import items from "./item.json"
-import {Link, Outlet} from "react-router-dom"
-import PopUp from '../../PopUp/PopUp';
-
+import {Link} from "react-router-dom"
+import PopUp from "./PopUp/PopUp"
 
 function EarbudsItem() {
    
@@ -12,7 +11,6 @@ function EarbudsItem() {
         <div className="flex justify-between mb-3 ">
             <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
             <Link to="wireless-earbuds" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
-            {/* <Link to="/a">asdffd</Link> */}
         </div>
         
         <div className="flex gap-4 ">
@@ -41,7 +39,7 @@ function EarbudsItem() {
                         </div>
                     </div>
                     <div className="">
-                        <button onClick={<PopUp/>}/>} className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button>
+                        <button className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button>
                     </div>
                 </div>
             </div>

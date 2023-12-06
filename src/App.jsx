@@ -13,8 +13,7 @@ import AllheadPhones from './Components/Home/Headphones/AllheadPhones/AllheadPho
 import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
 import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
 import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
-import PopUp from './Components/PopUp/PopUp';
-
+import PopUp from "./Components/Home/Earbuds/PopUp/PopUp"
 
 function App() {
   return (
@@ -35,6 +34,7 @@ function App() {
           <Route path='soundbar' element={<AllsoundBar/>}/>
         </Routes>
       </BrowserRouter>
+      <PopUp/>
       
       
       <Chatbot/>
