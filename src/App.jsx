@@ -34,7 +34,7 @@ function App() {
           <Route path='soundbar' element={<AllsoundBar/>}/>
         </Routes>
       </BrowserRouter>
-      <PopUp/>
+      {/* <PopUp/> */}
       
       
       <Chatbot/>

@@ -10,7 +10,7 @@ function SpeakerHead() {
                 </div>
                 <h4 className='text-3xl mt-2 font-medium tracking-wider'>Starting from <span className='font-extrabold'>&#8377;749&lowast;</span></h4>
                 <div className='mt-2'>
-                    <button className='flex py-2 rounded-2xl bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></button>
+                    <button className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></button>
                 </div>
             </div>
 

@@ -16,7 +16,7 @@ function NavBar() {
       </div>
       <nav className='flex gap-1 font-thin py-5 cursor-pointer text-base tracking-widest items-center w-100 relative'>
         <Link to="categories" spy={true} smooth={true} duration={500} className='flex mr-6 hover:font-bold '>Categories<FaAngleDown />
-</Link>
+        </Link>
         <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>boAt Truly Yours</Link>
         <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Gift with boAt</Link>
         <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Corporate Orders</Link>
