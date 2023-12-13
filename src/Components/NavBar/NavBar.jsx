@@ -7,9 +7,12 @@ import companyLogo from '../../assets/images/boat.jpeg';
 import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
 import SignUp from '../SignIn/SignUp';
+import AddtoCart from '../CartPage/AddtoCart';
 
 function NavBar() {
-  const [showPopUp,setShowpopup] = useState(false)
+  const [showPopUp,setShowpopup] = useState(false);
+  const [cart,setCart] = useState(false);
+
   return (
     <>
     <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
@@ -33,12 +36,15 @@ function NavBar() {
       </div>      
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      <HiOutlineShoppingBag size={25}  className='ml-2'/>
+      <HiOutlineShoppingBag size={25}  className='ml-2' onClick={() => setCart(true)}/>
+      
       </div>
+      
       </div>
     </div>
     {showPopUp && <SignUp close={setShowpopup}/>}
-
+      {cart && <AddtoCart remove={setCart}/>}
+    
     </>
   )
 }
