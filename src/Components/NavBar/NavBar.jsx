@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { Link } from 'react-scroll';
 import { Link } from 'react-router-dom';
 import { FaAngleDown,FaRegUser } from "react-icons/fa";
@@ -6,8 +6,10 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import companyLogo from '../../assets/images/boat.jpeg';
 import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
+import SignUp from '../SignIn/SignUp';
 
 function NavBar() {
+  const [showPopUp,setShowpopup] = useState(false)
   return (
     <>
     <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
@@ -30,11 +32,12 @@ function NavBar() {
         <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' className='bg-transparent focus:outline-none' /><IoIosClose className='p-1  box-content bg-white rounded-full'/>
       </div>      
       <div className='flex gap-2 '>
-      <FaRegUser size={25} className='ml-2' />
+      <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
       <HiOutlineShoppingBag size={25}  className='ml-2'/>
       </div>
       </div>
     </div>
+    {showPopUp && <SignUp close={setShowpopup}/>}
 
     </>
   )
