@@ -6,8 +6,8 @@
         "image":"AD-131-color-1",
         "name":"Airdopes 131",
         "color":"Col+5",
-        "offer":899,
-        "price":299,
+        "price":899,
+        "oldPrice":299,
         "off":"70% off"
     },
     {
@@ -17,8 +17,8 @@
         "image":"AD-141-color-2",
         "name":"Airdopes 141",
         "color":"Col+5",
-        "offer":899,
-        "price":2990,
+        "price":899,
+        "oldPrice":2990,
         "off":"70% off"
     },
     {
@@ -28,8 +28,8 @@
         "image":"AD-131-PRO-color-3",
         "name":"Airdopes 131-PRO",
         "color":"Col+5",
-        "offer":899,
-        "price":2990,    
+        "price":899,
+        "oldPrice":2990,    
         "off":"70% off"
     },
     {
@@ -39,8 +39,8 @@
         "image":"AD_161-color-4",
         "name":"Airdopes 161",
         "color":"Col+5",
-        "offer":899,
-        "price":2990,
+        "price":899,
+        "oldPrice":2990,
         "off":"70% off"
     }
     

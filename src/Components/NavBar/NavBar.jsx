@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { Link } from 'react-scroll';
+import React, { useState,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { FaAngleDown,FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -8,10 +7,16 @@ import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
 import SignUp from '../SignIn/SignUp';
 import AddtoCart from '../CartPage/AddtoCart';
+import { Cart } from '../Context/Context'
+import Log from '../SignIn/Log';
+import Search from '../Search/Search';
 
 function NavBar() {
   const [showPopUp,setShowpopup] = useState(false);
   const [cart,setCart] = useState(false);
+  const {products} = useContext(Cart);
+  const [searchTerm, setSearchTerm] = useState("");
+
 
   return (
     <>
@@ -32,18 +37,26 @@ function NavBar() {
       </nav>
       <div className='flex items-center ml-52 gap-3'>
       <div className='px-2 ml-4 relative rounded-3xl pl-2  py-2  flex bg-slate-100 gap-1'>
-        <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' className='bg-transparent focus:outline-none' /><IoIosClose className='p-1  box-content bg-white rounded-full'/>
+        <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' className='bg-transparent focus:outline-none' 
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+      }}/>
+        <IoIosClose className='p-1  box-content bg-white rounded-full'/>
       </div>      
+      {/* <Search/> */}
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      <HiOutlineShoppingBag size={25}  className='ml-2' onClick={() => setCart(true)}/>
+      <Link to="Cart"><HiOutlineShoppingBag size={25}  className='ml-2' />
+        <span className="text-xs absolute top-4 right-11 bg-red-500 text-white rounded-full px-2 py-1 mx-1">{products.length}</span>
+      </Link>
       
       </div>
       
       </div>
     </div>
-    {showPopUp && <SignUp close={setShowpopup}/>}
+    {showPopUp && <Log close={setShowpopup}/>}
       {cart && <AddtoCart remove={setCart}/>}
+      {searchTerm && <Search searchTerm={searchTerm} setTerm={setSearchTerm}/>}
     
     </>
   )

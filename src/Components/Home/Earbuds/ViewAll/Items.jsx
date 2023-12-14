@@ -1,10 +1,14 @@
 import React from 'react'
 import ViewAll from "./ViewItem.json"
+import Search from '../../../Search/Search'
 
 function Items() {
   return (
     <div className='pt-6 flex flex-wrap gap-6'>
-        {ViewAll.map((item) => {
+        {ViewAll
+            // <Search/>
+        
+        .map((item) => {
             return (
 <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
             <div className='w-[40%] mb-2 relative'>

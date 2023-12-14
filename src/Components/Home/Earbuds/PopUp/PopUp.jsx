@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import items from "../item.json"
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Color from './Color';
+// import { Cart } from '../../../Context/Context';
 
-
-function PopUp({close}) {
+function PopUp({close,item}) {
+// const {addToCart} = useContext(Cart);
  
-    
+// const handleAdd = () =>{
+//     addToCart(item);
+// }
 
   return (
     <>
@@ -17,7 +20,10 @@ function PopUp({close}) {
                     <img src="src\assets\images\airpodes\popup1.png" alt="Airdopes-131" className='w-[100%] rounded-lg' />
                 </div>
                 <div className='my-4 '>
-                    <button className='bg-black text-white w-full p-3 rounded-lg'>Add To Cart</button>
+                    <button className='bg-black text-white w-full p-3 rounded-lg'
+                        // onClick={handleAdd}
+                    >    
+                    Add To Cart</button>
                 </div>
                 <span className=' text-center mx-4 flex items-center gap-1'>View Product <IoArrowForwardCircleOutline size={16}/></span>
             </div>

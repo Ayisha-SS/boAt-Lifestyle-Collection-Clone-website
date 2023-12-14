@@ -13,12 +13,17 @@ import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
 import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
 import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
 import Chatbot from './Components/Home/Chatbot';
+import { Context } from './Components/Context/Context';
+import AddtoCart from './Components/CartPage/AddtoCart';
 
 function App() {
   return (
     <>
       <MetaTag/>
       <NavOrder/>
+
+      <Context>
+
       <BrowserRouter>
       <NavBar/>
       {/* <HomLink/> */}
@@ -31,9 +36,12 @@ function App() {
           <Route path='wireless-speaker' element={<AllSpeaker/>}/>
           <Route path='party-speaker' element={<AllprtySpkr/>}/>
           <Route path='soundbar' element={<AllsoundBar/>}/>
+          <Route path='cart' element={<AddtoCart/>}/>
         </Routes>
       </BrowserRouter>
       {/* <PopUp/> */}
+
+      </Context>
       
       
       <Chatbot/>

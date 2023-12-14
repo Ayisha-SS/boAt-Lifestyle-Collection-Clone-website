@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import items from "./item.json"
 import {Link} from "react-router-dom"
 import PopUp from "./PopUp/PopUp"
+import { Cart } from '../../Context/Context';
 
-function EarbudsItem() {
+function EarbudsItem(item) {
 
     const [popup,setPopup] = useState(false)
+
+    const {addToCart} = useContext(Cart);
+ 
+const handleAdd = () =>{
+    addToCart(item);
+}
 
     if(popup){
         document.body.classList.add("overflow-y-hidden")
@@ -44,14 +51,17 @@ function EarbudsItem() {
                             <p>{item.color}</p>
                         </div>
                         <div className='flex pt-2 gap-1 mt-1.5 mb-2.5'>
-                        <p className='text-sm mb-1 font-bold'>&#8377;{item.offer}</p>
-                        <p className='mb-1 text-xs text-gray-400'>&#8377;{item.price}</p>
+                        <p className='text-sm mb-1 font-bold'>&#8377;{item.price.toFixed(2)}</p>
+                        <p className='mb-1 text-xs text-gray-400'>&#8377;{item.oldPrice}</p>
                         <p className='text-xs pr-1.5 text-green-400'>{item.off}</p>
                         </div>
                     </div>
                     <div className="">
-                        <button key={item.id}
+                        {/* <button key={item.id}
                             onClick={() =>setPopup(true)} 
+                        className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button> */}
+                         <button key={item.id}
+                            onClick={handleAdd}
                         className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button>
                     </div>
                 </div>  
