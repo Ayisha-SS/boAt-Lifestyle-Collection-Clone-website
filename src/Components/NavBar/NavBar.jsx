@@ -10,6 +10,7 @@ import AddtoCart from '../CartPage/AddtoCart';
 import { Cart } from '../Context/Context'
 import Log from '../SignIn/Log';
 import Search from '../Search/Search';
+import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 
 function NavBar() {
   const [showPopUp,setShowpopup] = useState(false);
@@ -37,7 +38,7 @@ function NavBar() {
       </nav>
       <div className='flex items-center ml-52 gap-3'>
       <div className='px-2 ml-4 relative rounded-3xl pl-2  py-2  flex bg-slate-100 gap-1'>
-        <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' className='bg-transparent focus:outline-none' 
+        <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' value={searchTerm} className='bg-transparent focus:outline-none' 
         onChange={(event) => {
           setSearchTerm(event.target.value);
       }}/>
@@ -56,7 +57,7 @@ function NavBar() {
     </div>
     {showPopUp && <Log close={setShowpopup}/>}
       {cart && <AddtoCart remove={setCart}/>}
-      {searchTerm && <Search searchTerm={searchTerm} setTerm={setSearchTerm}/>}
+      {searchTerm && <EarbudsItem searchTerm={searchTerm} setTerm={setSearchTerm}/>}
     
     </>
   )

@@ -1,5 +1,6 @@
 import React,{useRef, useState} from 'react'
-import { json, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
+import CircularJSON from 'circular-json'
 
 function SignUp({remove}) {
     const navigate = useNavigate()
@@ -11,42 +12,25 @@ function SignUp({remove}) {
     // const [email,setEmail] = useState("");
     // const [password,setPassword] = useState('')
 
-    const handleClick = (e) => {
-        // e.preventDefault()
-        console.log("hi");
-        
-        // let user = new Array();
-
-        // if(name.current.value && email.current.value && password.current.value)
-        // {
-        //     localStorage.setItem("name",name.current.value)
-        //     localStorage.setItem("email",email.current.value)
-        //     localStorage.setItem("password",password.current.value)
-        //     alert("Account Created Successfully")
-           
-        // }
-
+    const handleClick = () => {
         let user = new Array();
-        user = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-        if(user.some((v) => {
-            return v.email == email
-        })){
-            alert("Duplicate Data")
-        }
-        else{
-            user.push({
-                "name":name,
-                "email":email,
-                "password":password
-            })
-            localStorage.setItem("users",JSON.stringify(user));            
-            alert("Successfully Registered");
-            navigate("/")
-        }
+        if(name.current.value && email.current.value && password.current.value)
+        user.push({
+            "name":name.current.value,
+            "email":email.current.value,
+            "password":password.current.value
+        })
+        // localStorage.setItem(name.current.value)
+        // localStorage.setItem(email.current.value)
+        // localStorage.setItem(password.current.value)
+
+        localStorage.setItem("data",JSON.stringify(user));
+        alert("Account Created Successfully");
+        navigate("/")
     }
+
   return (
-    <div className='bg-[#313131cc] h-[100%] w-[100%] fixed top-0 bottom-0 right-0 left-0 z-10'>
-            
+    <div className='bg-[#313131cc] h-[100%] w-[100%] fixed top-0 bottom-0 right-0 left-0 z-10'>     
         <div className='mt-[80px] flex flex-col p-4 bg-[#fafafa] z-10 max-w-[580px] w-[100%]  absolute right-20'>
             <div className='my-4 items-center'>
             <h4 className='text-2xl tracking-wider'>Get <strong>started</strong></h4> 
@@ -54,7 +38,6 @@ function SignUp({remove}) {
             ' onClick={() => remove(false)}>&times;</span>
             </div>
             <div className='px-10 py-6'>
-
             <div className='mb-[10px]  '>
                 <input type="text" placeholder='Name' ref={name} className='p-3 w-[100%] text-lg bg-slate-200'
                />
@@ -73,5 +56,4 @@ function SignUp({remove}) {
     </div>
   )
 }
-
-export default SignUp
+  export default SignUp

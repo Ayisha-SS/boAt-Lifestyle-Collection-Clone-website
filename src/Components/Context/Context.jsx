@@ -1,16 +1,16 @@
 import React, { useReducer } from 'react'
 import { createContext } from 'react'
 import reducer, { initialState } from './Reducers';
-import EarbudsItem from '../Home/Earbuds/EarbudsItem';
+// import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 
 export const Cart = createContext();
 
 export const Context = ({children}) => {
   const [state,dispatch] = useReducer(reducer,initialState);
 
-  const addToCart = (EarbudsItem) =>{
+  const addToCart = (item) =>{
     const updateCart = state.products;
-    updateCart.push(EarbudsItem);
+    updateCart.push(item);
 
     updatePrice(updateCart)
 
@@ -20,8 +20,8 @@ export const Context = ({children}) => {
     })
   }
 
-  const removeFromCart = (EarbudsItem) =>{
-    const updateCart = state.products.filter((currentProduct) => currentProduct.name !== EarbudsItem.name);
+  const removeFromCart = (item) =>{
+    const updateCart = state.products.filter((currentProduct) => currentProduct.name !== item.name);
 
     updatePrice(updateCart)
 
@@ -34,8 +34,8 @@ export const Context = ({children}) => {
 
   const updatePrice = (products) =>{
     let total = 0;
-    products.forEach(EarbudsItem => {
-        total += EarbudsItem.price
+    products.forEach(item => {
+        total += item.price
     });
 
     dispatch({

@@ -16,7 +16,7 @@ const CartProducts = ({item}) => {
             <p className='text-xl font-medium'>{item.name}</p>
             <p className='text-lg'>&#8377;{Number(item.price).toFixed(2)}</p>
         </div>
-       <button className='bg-gray-500 text-white text-lg font-bold rounded-full p-4 hover:bg-red-500'
+       <button className='bg-black text-white text-base font-bold rounded-lg px-3 py-1 ml-6 mb-2 hover:bg-slate-500 '
         onClick={handleRemove}
        >
         Remove</button>

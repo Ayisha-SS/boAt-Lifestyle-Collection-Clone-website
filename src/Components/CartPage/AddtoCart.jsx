@@ -27,10 +27,10 @@ function AddtoCart({remove}) {
           <span className='text-xl py-4 font-bold'>Total: &#8377;{total.toFixed(2)}</span>
         </div>
 
-        {products.map((EarbudsItem,index) =>
+        {products.map((item,index) =>
             <CartProducts
                 key={index}
-                item={EarbudsItem}
+                item={item}
             />
 
         )}
