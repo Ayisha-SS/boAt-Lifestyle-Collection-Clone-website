@@ -42,17 +42,15 @@ function NavBar() {
         onChange={(event) => {
           setSearchTerm(event.target.value);
       }}/>
-        <IoIosClose className='p-1  box-content bg-white rounded-full'/>
+        <IoIosClose className='p-1 box-content bg-white rounded-full'/>
       </div>      
       {/* <Search/> */}
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      <Link to="Cart"><HiOutlineShoppingBag size={25}  className='ml-2' />
-        <span className="text-xs absolute top-4 right-11 bg-red-500 text-white rounded-full px-2 py-1 mx-1">{products.length}</span>
+      <Link to="Cart"><HiOutlineShoppingBag size={25} className='ml-2' />
+        <span className="text-[10px] absolute top-4 right-12 bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-center">{products.length}</span>
       </Link>
-      
-      </div>
-      
+      </div>  
       </div>
     </div>
     {showPopUp && <Log close={setShowpopup}/>}

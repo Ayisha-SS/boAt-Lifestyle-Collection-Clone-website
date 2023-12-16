@@ -7,19 +7,22 @@ import AllItem from './AllItem';
 
 function AllWatch() {
     return (
-        <div className='p-[3rem]'>
-          <div className='flex text-xs'>
-            <Link to="/">Home</Link> <MdKeyboardArrowRight />
-            <h4>Watches</h4>
+      <>
+          <div className='p-[3rem]'>
+            <div className='flex text-xs'>
+              <Link to="/">Home</Link> <MdKeyboardArrowRight />
+              <h4>Watches</h4>
+            </div>
+            <h2 className='pt-20 font-extrabold text-2xl tracking-wide'>Smart Watch</h2>
+            <div className='flex justify-between'>
+            <WatchFilter/>
+              <WatchSort/>
+            </div>
+            <AllItem/> 
           </div>
-          <h2 className='pt-20 font-extrabold text-2xl tracking-wide'>Smart Watch</h2>
-          <div className='flex justify-between'>
-           <WatchFilter/>
-            <WatchSort/>
-          </div>
-          <AllItem/>
-          
-        </div>
+          <Footer/>
+      </>
+        
       )
 }
 

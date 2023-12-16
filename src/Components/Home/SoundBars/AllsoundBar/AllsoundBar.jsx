@@ -7,6 +7,7 @@ import SoundbarItems from './SoundbarItems';
 
 function AllsoundBar() {
     return (
+      <>
         <div className='p-[3rem]'>
           <div className='flex text-xs'>
             <Link to="/">Home</Link> <MdKeyboardArrowRight />
@@ -19,6 +20,9 @@ function AllsoundBar() {
           </div>
          <SoundbarItems/>
         </div>
+        <Footer/>
+      </>
+        
       )
 }
 

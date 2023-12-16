@@ -10,6 +10,7 @@ const CartProducts = ({item}) => {
   return (
     <div className='flex flex-row items-center gap-0 px-10'>
         <div className='w-40'>
+            {console.log(Cart)}
             <img src={item.image} alt={item.name} />
         </div>
         <div>

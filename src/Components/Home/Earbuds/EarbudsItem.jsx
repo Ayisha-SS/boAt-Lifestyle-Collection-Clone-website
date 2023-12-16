@@ -8,10 +8,10 @@ import { Cart } from '../../Context/Context';
 function EarbudsItem({item,searchTerm,setTerm}) {
 
     // const [searchTerm,setTerm] = useState()
-console.log(searchTerm,"searchTerm");
+    console.log(searchTerm,"searchTerm");
     const [popup,setPopup] = useState(false)
     const [searchedItems,setSearchedItems] = useState(items)
-console.log(searchedItems,"searchedItems");
+    console.log(searchedItems,"searchedItems");
 
     const {addToCart} = useContext(Cart);
  
@@ -34,6 +34,7 @@ const handleAdd = () =>{
             <Link to="wireless-earbuds" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
         <div className="flex gap-4 ">
+        
 
 {/* product card... */}
         {items
@@ -65,9 +66,9 @@ const handleAdd = () =>{
                             <p>{item.color}</p>
                         </div>
                         <div className='flex pt-2 gap-1 mt-1.5 mb-2.5'>
-                        <p className='text-sm mb-1 font-bold'>&#8377;{Number(item.price).toFixed(2)}</p>
-                        <p className='mb-1 text-xs text-gray-400'>&#8377;{item.oldPrice}</p>
-                        <p className='text-xs pr-1.5 text-green-400'>{item.off}</p>
+                            <p className='text-sm mb-1 font-bold'>&#8377;{Number(item.price).toFixed(2)}</p>
+                            <p className='mb-1 text-xs text-gray-400'>&#8377;{item.oldPrice}</p>
+                            <p className='text-xs pr-1.5 text-green-400'>{item.off}</p>
                         </div>
                     </div>
                     <div className="">

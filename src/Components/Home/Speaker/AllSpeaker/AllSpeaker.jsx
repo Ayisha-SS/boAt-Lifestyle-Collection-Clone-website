@@ -7,6 +7,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 function AllSpeaker() {
     return (
+      <>
         <div className='p-[3rem]'>
           <div className='flex text-xs'>
             <Link to="/">Home</Link> <MdKeyboardArrowRight />
@@ -19,6 +20,9 @@ function AllSpeaker() {
           </div>
          <AllspkrItems/>
         </div>
+        <Footer/>
+      </>
+        
       )
 }
 
