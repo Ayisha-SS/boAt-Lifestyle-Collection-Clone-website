@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./prtySpeaker.json"
+import prtySpkr from "../Home.json"
 import {Link } from "react-router-dom";
 
-function PrtyspkrItem() {
+function PrtyspkrItem({item}) {
+
+  item = prtySpkr.partySpeakers
+  const [searchedItems,setSearchedItems] = useState(prtySpkr)
+
   return (
     <div className='pt-5'>
       <div className="flex justify-between mb-3 ">
@@ -15,7 +19,7 @@ function PrtyspkrItem() {
  {/* PRODUCT CARD... */}
         
         
-      {items.map((item) => {
+      {item.map((item) => {
         return (
 
 <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosSearch,IoIosClose } from "react-icons/io";
-import ViewAll from "../Home/Earbuds/item.json"
+// import ViewAll from "../Home/Earbuds/item.json"
 
 
 function Search({searchTerm,setTerm}) {

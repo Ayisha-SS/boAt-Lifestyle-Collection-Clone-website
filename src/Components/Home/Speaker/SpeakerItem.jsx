@@ -1,10 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./Speaker.json"
+// import items from "./Speaker.json"
+import speaker from "../Home.json"
 import {Link, Outlet} from "react-router-dom"
 
 
-function SpeakerItem() {
+function SpeakerItem({item}) {
+
+    item = speaker.wirelessSpeakers
+    const [searchedItems,setSearchedItems] = useState(speaker)
+
   return (
     <div className='pt-5'>
         <div className="flex justify-between mb-3 ">
@@ -16,7 +21,7 @@ function SpeakerItem() {
 {/* PRODUCT CARD... */}
             
 
-    {items.map((item) => {
+    {item.map((item) => {
         return (
 
         <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

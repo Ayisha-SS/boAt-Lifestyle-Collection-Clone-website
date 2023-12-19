@@ -9,8 +9,9 @@ import SignUp from '../SignIn/SignUp';
 import AddtoCart from '../CartPage/AddtoCart';
 import { Cart } from '../Context/Context'
 import Log from '../SignIn/Log';
-import Search from '../Search/Search';
+// import Search from '../Search/Search';
 import EarbudsItem from '../Home/Earbuds/EarbudsItem';
+import CollectionsdrpDown from './CollectionsdrpDown';
 
 function NavBar() {
   const [showPopUp,setShowpopup] = useState(false);
@@ -21,19 +22,19 @@ function NavBar() {
 
   return (
     <>
-    <div className='flex  flex-row  p-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
+    <div className='flex  flex-row  m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
       <div className='w-24 p-1 mr-10'>
         <Link to='/'><img src={companyLogo} alt="Logo" /></Link>
       </div>
-      <nav className='flex gap-1 font-thin py-5 cursor-pointer text-base tracking-widest items-center w-100 relative'>
-        <Link to="categories" spy={true} smooth={true} duration={500} className='flex mr-6 hover:font-bold '>Categories<FaAngleDown />
+      <nav className='flex gap-1 font-thin  cursor-pointer text-base tracking-widest items-center w-100 relative'>
+        <Link to="categories" spy={true} smooth={true} duration={500} className='flex mr-6 relative py-4 items-center hover:font-bold navdrop'>Categories<FaAngleDown /><CollectionsdrpDown/>
         </Link>
-        <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>boAt Truly Yours</Link>
-        <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Gift with boAt</Link>
-        <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 hover:font-bold '>Corporate Orders</Link>
+        <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>boAt Truly Yours</Link>
+        <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Gift with boAt</Link>
+        <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Corporate Orders</Link>
         {/* <Link to="/home">Home</Link>
         <Link to="/about">About</Link> */}
-        <Link to="more" spy={true} smooth={true} duration={500} className='flex  relative hover:font-extrabold'>More<FaAngleDown /><NavDropdown />
+        <Link to="more" spy={true} smooth={true} duration={500} className='flex py-4 items-center relative hover:font-extrabold navdrop'>More<FaAngleDown /><NavDropdown />
 </Link>
       </nav>
       <div className='flex items-center ml-52 gap-3'>
@@ -42,14 +43,13 @@ function NavBar() {
         onChange={(event) => {
           setSearchTerm(event.target.value);
       }}/>
-        <IoIosClose className='p-1 box-content bg-white rounded-full'/>
+        <IoIosClose className='p-1 box-content bg-white rounded-full' onClick={() =>setSearchTerm("")}/>
       </div>      
       {/* <Search/> */}
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      <Link to="Cart"><HiOutlineShoppingBag size={25} className='ml-2' />
+      <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
         <span className="text-[10px] absolute top-4 right-12 bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-center">{products.length}</span>
-      </Link>
       </div>  
       </div>
     </div>

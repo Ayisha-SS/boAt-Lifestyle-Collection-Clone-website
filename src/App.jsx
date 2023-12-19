@@ -23,27 +23,22 @@ function App() {
       <NavOrder/>
 
       <Context>
-
-      <BrowserRouter>
-      <NavBar/>
-      {/* <HomLink/> */}
-        <Routes>
-          <Route path='/' element={<HomLink/>}/>
-          <Route path='wireless-earbuds' element={<ViewAll/>}/>
-          <Route path='smart-watch' element={<AllWatch/>}/>
-          <Route path='neckbands' element={<AllBands/>}/>
-          <Route path='headphones' element={<AllheadPhones/>}/>
-          <Route path='wireless-speaker' element={<AllSpeaker/>}/>
-          <Route path='party-speaker' element={<AllprtySpkr/>}/>
-          <Route path='soundbar' element={<AllsoundBar/>}/>
-          <Route path='cart' element={<AddtoCart/>}/>
-        </Routes>
-      </BrowserRouter>
-      {/* <PopUp/> */}
+		
+		<BrowserRouter>
+			<NavBar/>
+			<Routes>
+				<Route path='/' element={<HomLink/>}/>
+				<Route path='wireless-earbuds' element={<ViewAll/>}/>
+				<Route path='smart-watch' element={<AllWatch/>}/>
+				<Route path='neckbands' element={<AllBands/>}/>
+				<Route path='headphones' element={<AllheadPhones/>}/>
+				<Route path='wireless-speaker' element={<AllSpeaker/>}/>
+				<Route path='party-speaker' element={<AllprtySpkr/>}/>
+				<Route path='soundbar' element={<AllsoundBar/>}/>
+			</Routes>
+		</BrowserRouter>
 
       </Context>
-      
-      
       <Chatbot/>
     </>
   )

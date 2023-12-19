@@ -1,0 +1,312 @@
+{
+    "earbuds":[
+        {
+            "id":1,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"AD-1.jpg",
+            "name":"Airdopes 131",
+            "color":"Col+5",
+            "price":899,
+            "oldPrice":299,
+            "off":"70% off"
+        },
+        {
+            "id":2,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"AD-2.jpg",
+            "name":"Airdopes 141",
+            "color":"Col+5",
+            "price":899,
+            "oldPrice":2990,
+            "off":"70% off"
+        },
+        {
+            "id":3,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"AD-3.jpg",
+            "name":"Airdopes 131-PRO",
+            "color":"Col+5",
+            "price":899,
+            "oldPrice":2990,    
+            "off":"70% off"
+        },
+        {
+            "id":4,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"AD-4.jpg",
+            "name":"Airdopes 161",
+            "color":"Col+5",
+            "price":899,
+            "oldPrice":2990,
+            "off":"70% off"
+        } 
+    ],
+
+    "watches":[
+        {
+            "id":1,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Storm Call",
+            "color":"Col+5",
+            "price":899,
+            "oldprice":2990,
+            "off":"70% off"
+        },
+        {
+            "id":2,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Wave Flex Connect",
+            "color":"Col+5",
+            "price":899,
+            "oldprice":2990,
+            "off":"70% off"
+        },
+        {
+            "id":3,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Lunar Connect",
+            "color":"Col+5",
+            "price":899,
+            "oldprice":2990,
+            "off":"70% off"
+        },
+        {
+            "id":4,
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Wave Beat Call",
+            "color":"Col+5",
+            "price":899,
+            "oldprice":2990,
+            "off":"70% off"
+        }
+    ],
+
+    "neckbands":[
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        }
+    ],
+
+    "headphones":[
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        }
+    ],
+
+    "wirelessSpeakers":[
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        }
+    ],
+
+    "partySpeakers":[
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        },
+        {
+            "status":"Engraving Available",
+            "hours":"60 Hours playback",
+            "image":"",
+            "name":"Airdopes",
+            "color":"Col+5",
+            "offer":899,
+            "price":2990,
+            "off":"70% off"
+        }
+    ],
+
+    "soundBars":[
+        {
+            "status":"Engraving Available",
+            "sound":"60W Rms Sound",
+            "image":"",
+            "name":"Aavante Bar 1150",
+            "color":"Col+5",
+            "offer":5299,
+            "price":9990,
+            "off":"47% off"
+        },
+        {
+            "status":"Engraving Available",
+            "sound":"60W Rms Sound",
+            "image":"",
+            "name":"Aavante Bar Rhythm",
+            "color":"Col+5",
+            "offer":4999,
+            "price":7990,
+            "off":"37% off"
+        },
+        {
+            "status":"Engraving Available",
+            "sound":"160W Rms Sound",
+            "image":"",
+            "name":"Aavante Bar Raga",
+            "color":"Col+5",
+            "offer":5499,
+            "price":15990,
+            "off":"66% off"
+        },
+        {
+            "status":"Engraving Available",
+            "sound":"16W Rms Sound",
+            "image":"",
+            "name":"Aavante Bar 558",
+            "color":"Col+5",
+            "offer":2199,
+            "price":3990,
+            "off":"45% off"
+        }
+    ]
+
+
+}

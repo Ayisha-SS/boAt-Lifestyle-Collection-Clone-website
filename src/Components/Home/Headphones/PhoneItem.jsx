@@ -1,10 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./Headphone.json"
+// import items from "./Headphone.json"
+import headphone from "../Home.json"
 import {Link, Outlet} from "react-router-dom"
 
 
-function PhoneItem() {
+function PhoneItem({item}) {
+
+  item = headphone.headphones
+
+  const [searchedItems,setSearchedItems] = useState(headphone)
+
+
   return (
     <div className='pt-5'>
       <div className="flex justify-between mb-3 ">
@@ -16,7 +23,7 @@ function PhoneItem() {
         {/* PRODUCT CARD... */}
         
 
-          {items.map((item) => {
+          {item.map((item) => {
             return (
 
 <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import items from "../item.json"
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Color from './Color';
 // import { Cart } from '../../../Context/Context';

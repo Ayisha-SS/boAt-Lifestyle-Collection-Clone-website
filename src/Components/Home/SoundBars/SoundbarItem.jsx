@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./Soundbar.json";
+import soundbar from "../Home.json";
 import {Link} from "react-router-dom";
 
-function SoundbarItem() {
+function SoundbarItem({item}) {
+
+    item = soundbar.soundBars
+    const [searchedItems,setSearchedItems] = useState(soundbar)
+
   return (
     <div className='pt-5'>
     <div className="flex justify-between mb-3 ">
@@ -15,7 +19,7 @@ function SoundbarItem() {
 {/* PRODUCT CARD... */}
        
 
-    {items.map((item) => {
+    {item.map((item) => {
         return (
 
             <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

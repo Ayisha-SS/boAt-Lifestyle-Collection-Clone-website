@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import items from "./Neckbar.json";
+// import items from "./Neckbar.json";
+import neckband from "../Home.json"
 import {Link} from "react-router-dom"
 
-function NeckItem() {
+function NeckItem({item}) {
+
+  item = neckband.neckbands
+  const [searchedItems,setSearchedItems] = useState(neckband)
+
   return (
     <div className='pt-5'>
       <div className="flex justify-between mb-3 ">
@@ -15,7 +20,7 @@ function NeckItem() {
   {/* PRODUCT CARD... */}
         
 
- {items.map((item) => {
+ {item.map((item) => {
 
   return(
 
