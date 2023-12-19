@@ -9,7 +9,6 @@ import SignUp from '../SignIn/SignUp';
 import AddtoCart from '../CartPage/AddtoCart';
 import { Cart } from '../Context/Context'
 import Log from '../SignIn/Log';
-// import Search from '../Search/Search';
 import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CollectionsdrpDown from './CollectionsdrpDown';
 
@@ -32,8 +31,6 @@ function NavBar() {
         <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>boAt Truly Yours</Link>
         <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Gift with boAt</Link>
         <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Corporate Orders</Link>
-        {/* <Link to="/home">Home</Link>
-        <Link to="/about">About</Link> */}
         <Link to="more" spy={true} smooth={true} duration={500} className='flex py-4 items-center relative hover:font-extrabold navdrop'>More<FaAngleDown /><NavDropdown />
 </Link>
       </nav>
@@ -45,7 +42,6 @@ function NavBar() {
       }}/>
         <IoIosClose className='p-1 box-content bg-white rounded-full' onClick={() =>setSearchTerm("")}/>
       </div>      
-      {/* <Search/> */}
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
       <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>

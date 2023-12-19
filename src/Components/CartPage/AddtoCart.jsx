@@ -9,7 +9,7 @@ function AddtoCart({remove}) {
 
   const {products,total} = useContext(Cart);
   return (
-    <div className='p-3 flex flex-col h-[100%] w-[30%] translate-x-0 transition ease-[cubic-bezier(0.75,0,1.75,1)] bg-white  right-0 z-10 top-0 fixed'>
+    <div className='p-3 flex flex-col h-[100%] w-[30%] translate-x-0 transition ease-[cubic-bezier(0.75,0,1.75,1)] bg-white  right-0 z-10 top-0 fixed overflow-auto'>
         <div className='flex justify-between'>
           <h6 className='text-xl py-4 font-bold'>Your Cart</h6>
           <span onClick={() => remove(false)} className='text-xl cursor-pointer'>&times;</span>

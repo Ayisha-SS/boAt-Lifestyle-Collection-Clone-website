@@ -8,10 +8,10 @@ const CartProducts = ({item}) => {
         removeFromCart(item);
     }
   return (
-    <div className='flex flex-row items-center gap-0 px-10'>
+    <div className='flex flex-row items-center gap-0 px-10 '>
         <div className='w-40'>
             {console.log(Cart)}
-            <img src={item.image} alt={item.name} />
+            <img src="src\assets\images\airpodes\AD-1.jpg" alt={item.name} />
         </div>
         <div>
             <p className='text-xl font-medium'>{item.name}</p>

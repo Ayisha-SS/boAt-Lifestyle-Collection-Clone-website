@@ -2,7 +2,7 @@ import React,{useRef, useState} from 'react'
 import { useNavigate} from 'react-router-dom'
 
 function SignUp({remove}) {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const name = useRef()
     const email = useRef()
     const password = useRef()
@@ -16,12 +16,18 @@ function SignUp({remove}) {
             "password":password.current.value
         })
 
+        // const user = {
+        //     name:name.current.value,
+        //     email:email.current.value,
+        //     password:password.current.value,
+        // }
+
         localStorage.setItem("data",JSON.stringify(user));
-        name.current.value = ""
-        email.current.value = ""
-        password.current.value = ""
+        name.current.value = "";
+        email.current.value = "";
+        password.current.value = "";
         alert("Account Created Successfully");
-        navigate("/")
+        useNavigate("/");
     }
 
   return (

@@ -1,16 +1,17 @@
-import React, { useReducer } from 'react'
-import { createContext } from 'react'
+import React, { useReducer,createContext  } from 'react'
 import reducer, { initialState } from './Reducers';
-// import EarbudsItem from '../Home/Earbuds/EarbudsItem';
+// import data from "../Home/Home.json"
+import storeReducer from './Reducers';
 
 export const Cart = createContext();
 
+
 export const Context = ({children}) => {
-  const [state,dispatch] = useReducer(reducer,initialState);
+  const [state,dispatch] = useReducer(storeReducer,initialState);
 
   const addToCart = (item) =>{
-    const updateCart = state.products;
-    updateCart.push(item);
+    const updateCart = [...state.products,item];
+    // updateCart.push(item);
 
     updatePrice(updateCart)
 
@@ -37,6 +38,8 @@ export const Context = ({children}) => {
     products.forEach(item => {
         total += item.price
     });
+
+    // const total = products.reduce((sum,item) => sum + item.price,0)
 
     dispatch({
         type:"update price",

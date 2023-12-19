@@ -14,10 +14,14 @@ function EarbudsItem({item,searchTerm,setTerm}) {
     const [popup,setPopup] = useState(false)
     const [searchedItems,setSearchedItems] = useState(earbud)
 
-    const {addToCart} = useContext(Cart);
+    const {addToCart,dispatch} = useContext(Cart);
  
-    const handleAdd = () =>{
-        addToCart(item);
+    // const handleAdd = (item) =>{
+    //     dispatch({type:"add",payload:item});
+    // };
+
+    const handleAdd = (item) =>{
+        addToCart(item)
     }
 
     if(popup){
