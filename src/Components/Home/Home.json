@@ -2,9 +2,10 @@
     "earbuds":[
         {
             "id":1,
+            "type":"earbuds1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"AD-1.jpg",
+            "image":"src/assets/images/airpodes/AD_131.webp",
             "name":"Airdopes 131",
             "color":"Col+5",
             "price":899,
@@ -13,35 +14,38 @@
         },
         {
             "id":2,
+            "type":"earbuds2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"AD-2.jpg",
+            "image":"src/assets/images/airpodes/AD-2.jpg",
             "name":"Airdopes 141",
             "color":"Col+5",
-            "price":899,
+            "price":999,
             "oldPrice":2990,
             "off":"70% off"
         },
         {
             "id":3,
+            "type":"earbuds3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"AD-3.jpg",
+            "image":"src/assets/images/airpodes/AD-3.jpg",
             "name":"Airdopes 131-PRO",
             "color":"Col+5",
-            "price":899,
+            "price":1299,
             "oldPrice":2990,    
             "off":"70% off"
         },
         {
             "id":4,
+            "type":"earbuds4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"AD-4.jpg",
+            "image":"src/assets/images/airpodes/AD-4.jpg",
             "name":"Airdopes 161",
             "color":"Col+5",
-            "price":899,
-            "oldPrice":2990,
+            "price":2299,
+            "oldPrice":7990,
             "off":"70% off"
         } 
     ],
@@ -49,262 +53,306 @@
     "watches":[
         {
             "id":1,
+            "type":"watches1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
+            "image":"src/assets/images/Watch/Wave_Call-1.jpg",
             "name":"Storm Call",
             "color":"Col+5",
-            "price":899,
-            "oldprice":2990,
+            "price":1499,
+            "oldprice":7990,
             "off":"70% off"
         },
         {
             "id":2,
+            "type":"watches2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
+            "image":"src/assets/images/Watch/Wave_Flex_Connect.webp",
             "name":"Wave Flex Connect",
             "color":"Col+5",
-            "price":899,
-            "oldprice":2990,
+            "price":1499,
+            "oldprice":7990,
             "off":"70% off"
         },
         {
             "id":3,
+            "type":"watches3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
+            "image":"src/assets/images/Watch/Wave_Call-3.webp",
             "name":"Lunar Connect",
             "color":"Col+5",
-            "price":899,
-            "oldprice":2990,
+            "price":1799,
+            "oldprice":7999,
             "off":"70% off"
         },
         {
             "id":4,
+            "type":"watches4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
+            "image":"src/assets/images/Watch/Wave_Call-4.gif",
             "name":"Wave Beat Call",
             "color":"Col+5",
-            "price":899,
-            "oldprice":2990,
+            "price":1499,
+            "oldprice":6490,
             "off":"70% off"
         }
     ],
 
     "neckbands":[
         {
+            "id":1,
+            "type":"neckbands1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/neckbands/Rockerz_100x.png",
+            "name":"Nirvanaa 751 ANC",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
+            "price":4499,
+            "oldprice":7990,
             "off":"70% off"
         },
         {
+            "id":2,
+            "type":"neckbands2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/neckbands/Rockerz-400.jpg",
+            "name":"Immortal 400",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
+            "price":1999,
+            "oldprice":6990,
             "off":"70% off"
         },
         {
+            "id":3,
+            "type":"neckbands3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/neckbands/Rockerz-450.png",
+            "name":"Immortal 200",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
+            "price":1999,
+            "oldprice":4990,
             "off":"70% off"
         },
         {
+            "id":4,
+            "type":"neckbands4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/neckbands/Rockerz-510.png",
+            "name":"Rockid Rush",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
+            "price":1999,
+            "oldprice":4590,
             "off":"70% off"
         }
     ],
 
     "headphones":[
         {
+            "id":1,
+            "type":"headphones1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/Headphones/Nirvana_751_ANC.webp",
+            "name":"Nirvanaa 751 ANC",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":4499,
+            "oldprice":7990,
+            "off":"44% off"
         },
         {
+            "id":2,
+            "type":"headphones2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/Headphones/IM_400.gif",
+            "name":"Immortal 400",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":1999,
+            "oldprice":6990,
+            "off":"71% off"
         },
         {
+            "id":3,
+            "type":"headphones3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/Headphones/Immortal_200.jpg",
+            "name":"Immortal 200",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":1999,
+            "oldprice":4990,
+            "off":"60% off"
         },
         {
+            "id":4,
+            "type":"headphones4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/Headphones/Rockid_Rush.webp",
+            "name":"Rockid Rush",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":1299,
+            "oldprice":4890,
+            "off":"65% off"
         }
     ],
 
     "wirelessSpeakers":[
         {
+            "id":1,
+            "type":"wirelessSpeakers1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/wirless-spkr/Stone_350.webp",
+            "name":"Stone 350",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":1299,
+            "oldprice":3490,
+            "off":"63% off"
         },
         {
+            "id":2,
+            "type":"wirelessSpeakers2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/wirless-spkr/Stone-105.webp",
+            "name":"Stone 105",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":999,
+            "oldprice":2490,
+            "off":"60% off"
         },
         {
+            "id":3,
+            "type":"wirelessSpeakers3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/wirless-spkr/Stone_180.webp",
+            "name":"Stone 180",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":1299,
+            "oldprice":2490,
+            "off":"48% off"
         },
         {
+            "id":4,
+            "type":"wirelessSpeakers4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/wirless-spkr/Stone_352.jpg",
+            "name":"Stone 352",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":899,
+            "oldprice":2990,
+            "off":"60% off"
         }
     ],
 
     "partySpeakers":[
         {
+            "id":1,
+            "type":"partySpeakers1",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/speaker/Partypal_200.webp",
+            "name":"Party Pal 200",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":8999,
+            "oldprice":9990,
+            "off":"10% off"
         },
         {
+            "id":2,
+            "type":"partySpeakers2",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/speaker/PP_390.webp",
+            "name":"Party Pal 390",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":14999,
+            "oldprice":34990,
+            "off":"57% off"
         },
         {
+            "id":3,
+            "type":"partySpeakers3",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/speaker/Partypal_300_.psb.webp",
+            "name":"Party Pal 300",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":12999,
+            "oldprice":29990,
+            "off":"57% off"
         },
         {
+            "id":4,
+            "type":"partySpeakers4",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
-            "image":"",
-            "name":"Airdopes",
+            "image":"src/assets/images/speaker/PP_195.webp",
+            "name":"Party Pal 195",
             "color":"Col+5",
-            "offer":899,
-            "price":2990,
-            "off":"70% off"
+            "price":7499,
+            "oldprice":17990,
+            "off":"58% off"
         }
     ],
 
     "soundBars":[
         {
+            "id":1,
+            "type":"soundBars1",
             "status":"Engraving Available",
             "sound":"60W Rms Sound",
-            "image":"",
+            "image":"src/assets/images/sound-bar/Aavante Bar 1150.png",
             "name":"Aavante Bar 1150",
             "color":"Col+5",
-            "offer":5299,
-            "price":9990,
+            "price":5299,
+            "oldprice":9990,
             "off":"47% off"
         },
         {
+            "id":2,
+            "type":"soundBars2",
             "status":"Engraving Available",
             "sound":"60W Rms Sound",
-            "image":"",
+            "image":"src/assets/images/sound-bar/AB_Aspire.webp",
             "name":"Aavante Bar Rhythm",
             "color":"Col+5",
-            "offer":4999,
-            "price":7990,
-            "off":"37% off"
+            "price":1299,
+            "oldprice":3490,
+            "off":"63% off"
         },
         {
+            "id":3,
+            "type":"soundBars3",
             "status":"Engraving Available",
             "sound":"160W Rms Sound",
-            "image":"",
-            "name":"Aavante Bar Raga",
+            "image":"src/assets/images/sound-bar/FIABTune01_300x.avif",
+            "name":"Aavante Bar Rhythm",
             "color":"Col+5",
-            "offer":5499,
-            "price":15990,
-            "off":"66% off"
+            "price":1799,
+            "oldprice":2990,
+            "off":"40% off"
         },
         {
+            "id":4,
+            "type":"soundBars4",
             "status":"Engraving Available",
             "sound":"16W Rms Sound",
-            "image":"",
-            "name":"Aavante Bar 558",
+            "image":"src/assets/images/sound-bar/Avante-Bar-500.avif",
+            "name":"Aavante Bar 500",
             "color":"Col+5",
-            "offer":2199,
-            "price":3990,
-            "off":"45% off"
+            "price":4999,
+            "oldprice":7990,
+            "off":"37% off"
         }
     ]
 

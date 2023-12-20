@@ -1,5 +1,7 @@
 import React from 'react'
 import AllItems from './AllItem.json'
+import Footer from '../../Footer/Footer';
+
 
 function AllItem() {
     return (
@@ -8,7 +10,7 @@ function AllItem() {
                 return (
     <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
                 <div className='w-[40%] mb-2 relative'>
-                    <img src="src\assets\images\Watch\Wave_Call__1.jpg" alt="Smart Watch" className='w-[100%] rounded-lg'/>
+                    <img src={item.image} alt="Smart Watch" className='w-[100%] rounded-lg'/>
                 </div>
                 <div>
                     <span className='absolute left-1 text-[10px] top-5 bg-black text-white tracking-wide font-bold z-[1] rounded-r-lg p-1'>{item.status}</span>

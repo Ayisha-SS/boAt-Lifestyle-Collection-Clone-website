@@ -10,6 +10,7 @@ export const Context = ({children}) => {
   const [state,dispatch] = useReducer(storeReducer,initialState);
 
   const addToCart = (item) =>{
+    // console.log(item,"cart item");
     const updateCart = [...state.products,item];
     // updateCart.push(item);
 
@@ -22,8 +23,8 @@ export const Context = ({children}) => {
   }
 
   const removeFromCart = (item) =>{
-    const updateCart = state.products.filter((currentProduct) => currentProduct.name !== item.name);
-
+    
+    const updateCart = state.products.filter((currentProduct) => currentProduct.type !== item.type);
     updatePrice(updateCart)
 
     dispatch({
@@ -40,11 +41,17 @@ export const Context = ({children}) => {
     });
 
     // const total = products.reduce((sum,item) => sum + item.price,0)
-
     dispatch({
         type:"update price",
         payload:total
     })
+  }
+
+  const increment = (type) =>{
+    return dispatch({
+      type:"Increment",
+      payload:type,
+    });
   }
 
   const value = {
@@ -52,6 +59,7 @@ export const Context = ({children}) => {
     products:state.products,
     addToCart,
     removeFromCart,
+    increment, 
   }
 
   return <Cart.Provider value={value}>

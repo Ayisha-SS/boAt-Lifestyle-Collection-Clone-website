@@ -4,6 +4,7 @@ import WatchSort from './WatchSort'
 import { Link } from 'react-router-dom'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import AllItem from './AllItem';
+import Footer from '../../Footer/Footer';
 
 function AllWatch() {
     return (

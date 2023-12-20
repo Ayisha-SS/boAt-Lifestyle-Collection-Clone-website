@@ -7,10 +7,11 @@ import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
 import SignUp from '../SignIn/SignUp';
 import AddtoCart from '../CartPage/AddtoCart';
-import { Cart } from '../Context/Context'
+// import { Cart } from '../Context/Context'
 import Log from '../SignIn/Log';
 import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CollectionsdrpDown from './CollectionsdrpDown';
+import { Cart } from '../Context/Context';
 
 function NavBar() {
   const [showPopUp,setShowpopup] = useState(false);

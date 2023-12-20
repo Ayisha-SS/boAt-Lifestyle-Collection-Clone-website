@@ -9,18 +9,13 @@ function EarbudsItem({item,searchTerm,setTerm}) {
 
     item = earbud.earbuds
 
-
-
     const [popup,setPopup] = useState(false)
     const [searchedItems,setSearchedItems] = useState(earbud)
 
     const {addToCart,dispatch} = useContext(Cart);
- 
-    // const handleAdd = (item) =>{
-    //     dispatch({type:"add",payload:item});
-    // };
-
+   
     const handleAdd = (item) =>{
+        // console.log(item,"item");
         addToCart(item)
     }
 
@@ -61,7 +56,7 @@ function EarbudsItem({item,searchTerm,setTerm}) {
                         <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>{item.hours}</span>
                     </div>
                     <div className="h-80 w-[100%] rounded-t-3x ">
-                        <img src="src\assets\images\airpodes\AD-1.jpg" alt={item.name} className='w-[100%] rounded-lg'/>
+                        <img src={item.image} alt={item.name} className='w-[100%] rounded-lg'/>
                     </div>
                     <div className="px-2.5 py-6 bg-slate-100">
                         <div className=" text-4">
@@ -80,7 +75,9 @@ function EarbudsItem({item,searchTerm,setTerm}) {
                                 onClick={() =>setPopup(true)} 
                             className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button> */}
                             <button key={item.id}
-                                onClick={handleAdd}
+                                onClick={()=>{
+                                    handleAdd(item)}
+                                }
                             className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button>
                         </div>
                     </div>  

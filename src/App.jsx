@@ -13,8 +13,9 @@ import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
 import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
 import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
 import Chatbot from './Components/Home/Chatbot';
-import { Context } from './Components/Context/Context';
+
 import AddtoCart from './Components/CartPage/AddtoCart';
+import { Context } from './Components/Context/Context';
 
 function App() {
   return (
