@@ -1,19 +1,16 @@
 import React, { useReducer,createContext  } from 'react'
 import reducer, { initialState } from './Reducers';
-// import data from "../Home/Home.json"
 import storeReducer from './Reducers';
 
-export const Cart = createContext();
 
+export const Cart = createContext();
 
 export const Context = ({children}) => {
   const [state,dispatch] = useReducer(storeReducer,initialState);
 
+  //add item...
   const addToCart = (item) =>{
-    // console.log(item,"cart item");
     const updateCart = [...state.products,item];
-    // updateCart.push(item);
-
     updatePrice(updateCart)
 
     dispatch({
@@ -22,8 +19,8 @@ export const Context = ({children}) => {
     })
   }
 
+  //remove item...
   const removeFromCart = (item) =>{
-    
     const updateCart = state.products.filter((currentProduct) => currentProduct.type !== item.type);
     updatePrice(updateCart)
 
@@ -31,35 +28,47 @@ export const Context = ({children}) => {
         type:"remove",
         payload:updateCart
     })
-    
   }
 
+  //update price...
   const updatePrice = (products) =>{
     let total = 0;
     products.forEach(item => {
-        total += item.price
+    	total += item.price
     });
 
-    // const total = products.reduce((sum,item) => sum + item.price,0)
     dispatch({
         type:"update price",
         payload:total
     })
   }
 
-  const increment = (type) =>{
-    return dispatch({
-      type:"Increment",
-      payload:type,
-    });
-  }
+//decrement item...
+	const setDecrease = (type) =>{
+		const updatedProduct = state.products.map((currentProduct) =>currentProduct.type === action.payload)
+		const decAmount = currentProduct.amount - 1;
+		dispatch({
+			type:"set_Decrement",
+			payload:type
+		})
+  	}
+
+//increment item...
+	const setIncrease = (type) =>{
+		dispatch({
+			type:"set_Increment",
+			payload:type
+		})
+	}
 
   const value = {
     total:state.total,
     products:state.products,
     addToCart,
     removeFromCart,
-    increment, 
+	setDecrease,
+	setIncrease,
+    
   }
 
   return <Cart.Provider value={value}>

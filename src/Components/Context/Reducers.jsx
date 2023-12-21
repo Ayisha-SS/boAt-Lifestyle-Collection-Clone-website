@@ -19,10 +19,15 @@ const storeReducer = (state,action) =>{
                 ...state,
                 total:action.payload
             }
-        case "Increment":
+        
+    //increment
+        case "set_Increment":
+            if(action.payload)
             return{
-                let updatedCart = 
-            }
+            ...state,
+            products:action.payload
+            }        
+
         default:throw Error("Cannot match case in reducer")
 
     }
