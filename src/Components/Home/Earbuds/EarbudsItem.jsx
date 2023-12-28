@@ -74,6 +74,7 @@ function EarbudsItem({item,searchTerm,setTerm}) {
                             {/* <button key={item.id}
                                 onClick={() =>setPopup(true)} 
                             className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button> */}
+                           
                             <button key={item.id}
                                 onClick={()=>{
                                     handleAdd(item)}

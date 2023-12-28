@@ -3,6 +3,9 @@ import { Cart } from '../Context/Context';
 import { MdDelete } from "react-icons/md";
 import CartAmount from './CartAmount';
 
+import StripeCheckoutButton from '../StripeCheckout';
+
+
 const CartProducts = ({item,amount}) => {
     // console.log(item,"item");
     const {removeFromCart,setDecrease,setIncrease} = useContext(Cart);
@@ -14,6 +17,8 @@ const CartProducts = ({item,amount}) => {
    
 
   return (
+    <>
+    
     <div className='flex flex-row items-center justify-between gap-0 px-8 mb-3'>
             <div className="w-[35%] ">
                 {/* {console.log(Cart)} */}
@@ -26,11 +31,11 @@ const CartProducts = ({item,amount}) => {
             <p className='text-base  font-medium mb-3'>{item.name}</p>
             <p className='text-base font-bold '>&#8377;{Number(item.price).toFixed(2)}</p>
             
-            <CartAmount
+            {/* <CartAmount
                 amount = {amount}
                 setDecrease={() => setDecrease(type)}
                 setIncrease={() => setIncrease(type)}
-            />
+            /> */}
            
         </div>
        {/* <button className='bg-black text-white text-base font-bold rounded-lg px-3 py-1 ml-6 mb-2 '
@@ -38,7 +43,12 @@ const CartProducts = ({item,amount}) => {
        >
         Remove</button> */}
         <MdDelete className='ml-3 text-4xl text-center rounded-xl hover:bg-slate-300 ' onClick={() =>{handleRemove(item)}}/>
+
+        <div>
+            <StripeCheckoutButton />
+        </div>
     </div>
+    </>
   )
 }
 

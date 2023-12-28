@@ -3,7 +3,7 @@ import './App.css'
 import MetaTag from './Components/MetaTag';
 import NavOrder from './Components/NavBar/Navorder';
 import NavBar from './Components/NavBar/NavBar';
-import { BrowserRouter, Routes,Route ,Link } from 'react-router-dom';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import HomLink from './Components/Home/HomLink';
 import ViewAll from './Components/Home/Earbuds/ViewAll/ViewAll';
 import AllWatch from './Components/Home/Watches/AllWatch/AllWatch';
@@ -13,9 +13,11 @@ import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
 import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
 import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
 import Chatbot from './Components/Home/Chatbot';
-
-import AddtoCart from './Components/CartPage/AddtoCart';
+// import AddtoCart from './Components/CartPage/AddtoCart';
 import { Context } from './Components/Context/Context';
+
+import ChatBot from "react-simple-chatbot"
+import { Segment } from 'semantic-ui-react';
 
 function App() {
   return (
@@ -40,9 +42,17 @@ function App() {
 		</BrowserRouter>
 
       </Context>
-      <Chatbot/>
+      {/* <Chatbot/> */}
+	<Segment floated='right'>
+<ChatBot steps = {steps}/>
+	</Segment>
+	  
     </>
   )
 }
 
 export default App
+
+
+
+
