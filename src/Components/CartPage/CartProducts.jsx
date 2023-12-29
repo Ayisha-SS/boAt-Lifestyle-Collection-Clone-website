@@ -42,7 +42,7 @@ const CartProducts = ({item,amount}) => {
         onClick={ ()=>{handleRemove(item)}}
        >
         Remove</button> */}
-        <MdDelete className='ml-3 text-4xl text-center rounded-xl hover:bg-slate-300 ' onClick={() =>{handleRemove(item)}}/>
+        <MdDelete className='ml-3 text-2xl text-center hover:bg-slate-300 cursor-pointer' onClick={() =>{handleRemove(item)}}/>
 
         <div>
             <StripeCheckoutButton />

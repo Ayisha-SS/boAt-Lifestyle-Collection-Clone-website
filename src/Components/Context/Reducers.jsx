@@ -1,6 +1,7 @@
 export const initialState = {
     total:0,
-    products:[]
+    products:[],
+    sorting_value:"lowest"
 }
 const storeReducer = (state,action) =>{
     switch (action.type) {
@@ -26,10 +27,21 @@ const storeReducer = (state,action) =>{
             return{
             ...state,
             products:action.payload
-            }        
+            }
+            
+    //sort 
+        case "GET_SORT_VALUE": 
+        let userSortValue = document.getElementById("sort");
+        let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
+        // console.log(sort_value);    
+            return{
+                    ...state,
+                    sorting_value:sort_value,
+            };
+        case "SORTING_PRODUCTS":
+            return
 
         default:throw Error("Cannot match case in reducer")
-
     }
 }
 export default storeReducer;

@@ -16,10 +16,10 @@ import Chatbot from './Components/Home/Chatbot';
 // import AddtoCart from './Components/CartPage/AddtoCart';
 import { Context } from './Components/Context/Context';
 
-import ChatBot from "react-simple-chatbot"
-import { Segment } from 'semantic-ui-react';
-
 function App() {
+
+	
+
   return (
     <>
       <MetaTag/>
@@ -42,11 +42,8 @@ function App() {
 		</BrowserRouter>
 
       </Context>
-      {/* <Chatbot/> */}
-	<Segment floated='right'>
-<ChatBot steps = {steps}/>
-	</Segment>
 	  
+      <Chatbot/>
     </>
   )
 }

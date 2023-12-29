@@ -1,4 +1,4 @@
-import React, { useReducer,createContext  } from 'react'
+import React, { useReducer,createContext, useEffect  } from 'react'
 import reducer, { initialState } from './Reducers';
 import storeReducer from './Reducers';
 
@@ -61,13 +61,24 @@ export const Context = ({children}) => {
 		})
 	}
 
+  //sorting function
+  const sorting = () => {
+    dispatch({type:"GET_SORT_VALUE"})
+  };
+
+  useEffect(() => {
+    // console.log("hii");
+    dispatch({type:"SORTING_PRODUCTS",payload:products})
+  },[state.sorting_value]);
+
   const value = {
     total:state.total,
     products:state.products,
     addToCart,
     removeFromCart,
-	setDecrease,
-	setIncrease,
+	  setDecrease,
+	  setIncrease,
+    sorting,
     
   }
 

@@ -24,7 +24,8 @@
     "react-simple-chatbot": "^0.6.1",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^5.0.0",
-    "semantic-ui-react": "^2.1.5"
+    "semantic-ui-react": "^2.1.5",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

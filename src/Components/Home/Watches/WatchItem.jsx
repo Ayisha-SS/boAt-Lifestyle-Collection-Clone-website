@@ -67,8 +67,8 @@ function WatchItem({item,searchTerm,setTerm}) {
                       <p>{item.color}</p>
                     </div>
                     <div className='flex pt-2 gap-1 mt-1.5 mb-2.5'>
-                      <p className='text-sm mb-1 font-bold'>&#8377;{item.price}</p>
-                      <p className='mb-1 text-xs text-gray-400'>&#8377;{item.oldprice}</p>
+                      <p className='text-sm mb-1 font-bold'>&#8377;{Number(item.price).toFixed(2)}</p>
+                      <p className='mb-1 text-xs text-gray-400 line-through'>&#8377;{item.oldprice}</p>
                       <p className='text-xs pr-1.5 text-green-400'>{item.off}</p>
                     </div>
                   </div>
