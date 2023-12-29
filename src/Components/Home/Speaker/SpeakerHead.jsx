@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import {Link} from "react-router-dom"
 
 function SpeakerHead() {
   return (
@@ -9,8 +10,8 @@ function SpeakerHead() {
                     <h2 className='w- text-7xl font-thin whitespace-nowrap'>Wireless <span className='font-bold'>Speakers</span></h2>
                 </div>
                 <h4 className='text-3xl mt-2 font-medium tracking-wider'>Starting from <span className='font-extrabold'>&#8377;749&lowast;</span></h4>
-                <div className='mt-2'>
-                    <button className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></button>
+                <div className='mt-2 w-40'>
+                    <Link to="wireless-speaker" className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></Link>
                 </div>
             </div>
 

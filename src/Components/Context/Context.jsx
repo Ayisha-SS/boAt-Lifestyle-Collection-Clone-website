@@ -62,14 +62,14 @@ export const Context = ({children}) => {
 	}
 
   //sorting function
-  const sorting = () => {
-    dispatch({type:"GET_SORT_VALUE"})
-  };
+  // const sorting = () => {
+  //   dispatch({type:"GET_SORT_VALUE"})
+  // };
 
-  useEffect(() => {
-    // console.log("hii");
-    dispatch({type:"SORTING_PRODUCTS",payload:products})
-  },[state.sorting_value]);
+  // useEffect(() => {
+  //   // console.log("hii");
+  //   dispatch({type:"SORTING_PRODUCTS"})
+  // },[state.sorting_value]);
 
   const value = {
     total:state.total,
@@ -78,7 +78,7 @@ export const Context = ({children}) => {
     removeFromCart,
 	  setDecrease,
 	  setIncrease,
-    sorting,
+    // sorting,
     
   }
 

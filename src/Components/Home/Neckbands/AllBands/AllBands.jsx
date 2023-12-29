@@ -14,7 +14,7 @@ function AllBands() {
               <Link to="/">Home</Link> <MdKeyboardArrowRight />
               <h4>Neckbands</h4>
             </div>
-            <h2 className='pt-20 font-extrabold text-2xl tracking-wide'>Wireless Earbuds</h2>
+            <h2 className='pt-20 font-extrabold text-2xl tracking-wide'>Neckbands</h2>
             <div className='flex justify-between'>
               <BandsFilter/>
               <BandsSort/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-
+import {Link } from "react-router-dom"
 function NeckHead() {
   return (
     <div className='flex  '>
@@ -9,8 +9,8 @@ function NeckHead() {
                     <h2 className='w- text-8xl font-bold'>Neckbands</h2>
                 </div>
                 <h4 className='text-3xl mt-2 font-medium tracking-wider'>Starting from <span className='font-extrabold'>&#8377;999&lowast;</span></h4>
-                <div className='mt-2'>
-                    <button className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></button>
+                <div className='mt-2 w-40'>
+                    <Link to="neckbands" className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center' >Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></Link>
                 </div>
             </div>
 
