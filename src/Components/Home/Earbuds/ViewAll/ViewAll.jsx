@@ -20,7 +20,7 @@ function ViewAll() {
         <Filter/>
         <Sort/>
       </div>
-      <Items/>   
+      <Items />   
     </div>
     <Footer/>
     </>

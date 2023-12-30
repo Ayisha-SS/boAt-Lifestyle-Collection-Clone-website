@@ -224,7 +224,8 @@
         "features":"Instant Pairing",
         "availability":""
     },
-    {"id":10,
+    {
+        "id":10,
         "status":"Engraving Available",
         "hours":"42 Hours Playback",
         "rating":4.9,

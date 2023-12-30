@@ -16,6 +16,8 @@ import Chatbot from './Components/Home/Chatbot';
 // import AddtoCart from './Components/CartPage/AddtoCart';
 import { Context } from './Components/Context/Context';
 
+import ProductContainer from './Components/ProductContainer';
+
 function App() {
 
 	
@@ -44,6 +46,10 @@ function App() {
       </Context>
 	  
       <Chatbot/>
+
+
+
+	  {/* <ProductContainer/> */}
     </>
   )
 }

@@ -1,14 +1,53 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { BiSortAlt2 } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { Cart } from '../../../Context/Context';
+// import ViewAll from "./ViewItem.json"
 
 function Sort() {
-    const [state,setState] = useState(false)
+    // const [state,setState] = useState(false)
 
-    const {sorting} = useContext(Cart)
+    const [ViewAll,setViewAll] = useState([]);
+    const [sortBy,setSortBy] = useState("sort");
+
+    const handleSortChange = (event) => {
+		// console.log("hi");
+      setSortBy(event.target.value);
+
+    //   const sortedProducts = [...ViewAll].sort((a,b) => {
+    //     if (sortBy === "a-z") {
+    //       return b.name.localeCompare(a.name);
+    //     } else if (sortBy === "z-a") {
+    //       return a.name.localeCompare(b.name);
+    //     } else if (sortBy === "highest") {
+    //       return  b.price - a.price;
+    //     } else if (sortBy === "lowest") {
+    //       return a.price - b.price;
+    //     }
+    //   });
+    //   setViewAll(sortedProducts)
+
+
+	let sortedProducts = [...ViewAll];
+
+    if (event.target.value === 'lowest') {
+      sortedProducts = sortedProducts.sort((a, b) => a.offrprice - b.offrprice);
+	  console.log("low");
+    } else if (event.target.value === 'highest') {
+      sortedProducts = sortedProducts.sort((a, b) => b.offrprice - a.offrprice);
+	  console.log("high");
+    } else if (event.target.value === 'a-z') {
+      sortedProducts = sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+	  console.log("a-z");
+    } else if (event.target.value === 'z-a') {
+      sortedProducts = sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+	  console.log("z-a");
+    }
+
+    setViewAll(sortedProducts);
+    };
 
   return (
+	
     // <div className='pt-5'>
     //     <button onClick={() => setState(true)} className='relative flex text-lg font-bold  border-black px-4 py-2 rounded-md bg-[#eff4f7]'><BiSortAlt2 />Sort by <MdKeyboardArrowDown /></button>
     //     {state && (
@@ -29,8 +68,9 @@ function Sort() {
     <div className='pt-5'>
       <form action="#">
         <label htmlFor="sort"></label>
-        <select name="sort" id="sort" className='relative flex text-lg font-bold  border-black px-4 py-2 rounded-md bg-[#eff4f7]' onClick={sorting}>
+        <select name="sort" id="sort" className='relative flex text-lg font-bold  border-black px-4 py-2 rounded-md bg-[#eff4f7]' onChange={handleSortChange}>
           {/* <option value="default">Sort</option> */}
+          {/* <option value="sort"><BiSortAlt2 /> Sort</option> */}
           <option value="a-z" >Alphabetically,A-Z</option>
           <option value="" disabled></option>
           <option value="z-a">Alphabetically,Z-A</option>
