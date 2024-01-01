@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   font-family: Metropolis !important;
 }
 .dropdown{
@@ -10,4 +10,5 @@ body {
 }
 .navdrop:hover > .dropdown{
   display: flex;
-}
+} */
+@import "./Components/Style.css"

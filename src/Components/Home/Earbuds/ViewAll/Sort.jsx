@@ -10,40 +10,39 @@ function Sort() {
     const [sortBy,setSortBy] = useState("sort");
 
     const handleSortChange = (event) => {
-		// console.log("hi");
+		console.log("hi");
       setSortBy(event.target.value);
 
-    //   const sortedProducts = [...ViewAll].sort((a,b) => {
-    //     if (sortBy === "a-z") {
-    //       return b.name.localeCompare(a.name);
-    //     } else if (sortBy === "z-a") {
-    //       return a.name.localeCompare(b.name);
-    //     } else if (sortBy === "highest") {
-    //       return  b.price - a.price;
-    //     } else if (sortBy === "lowest") {
-    //       return a.price - b.price;
-    //     }
-    //   });
-    //   setViewAll(sortedProducts)
+      const sortedProducts = [...ViewAll].sort((a,b) => {
+        if (sortBy === "a-z") {
+          return b.name.localeCompare(a.name);
+        } else if (sortBy === "z-a") {
+          return a.name.localeCompare(b.name);
+        } else if (sortBy === "highest") { 
+          return  b.price - a.price;
+        } else if (sortBy === "lowest") { 
+          return a.price - b.price;
+        }
+      });
+      setViewAll(sortedProducts)
 
 
-	let sortedProducts = [...ViewAll];
+	// let sortedProducts = [...ViewAll];
 
-    if (event.target.value === 'lowest') {
-      sortedProducts = sortedProducts.sort((a, b) => a.offrprice - b.offrprice);
-	  console.log("low");
-    } else if (event.target.value === 'highest') {
-      sortedProducts = sortedProducts.sort((a, b) => b.offrprice - a.offrprice);
-	  console.log("high");
-    } else if (event.target.value === 'a-z') {
-      sortedProducts = sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-	  console.log("a-z");
-    } else if (event.target.value === 'z-a') {
-      sortedProducts = sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
-	  console.log("z-a");
-    }
+  //   if (event.target.value === 'lowest') {
+  //     sortedProducts = sortedProducts.sort((a, b) => a.offrprice - b.offrprice);
+  //   } else if (event.target.value === 'highest') {
+  //     sortedProducts = sortedProducts.sort((a, b) => b.offrprice - a.offrprice);
+	//   console.log("high");
+  //   } else if (event.target.value === 'a-z') {
+  //     sortedProducts = sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+	//   console.log("a-z");
+  //   } else if (event.target.value === 'z-a') {
+  //     sortedProducts = sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+	//   console.log("z-a");
+  //   }
 
-    setViewAll(sortedProducts);
+  //   setViewAll(sortedProducts);
     };
 
   return (

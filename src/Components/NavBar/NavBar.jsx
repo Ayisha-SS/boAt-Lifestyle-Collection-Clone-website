@@ -45,6 +45,7 @@ function NavBar() {
       </div>      
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
+      {/* <Link to="signup"><FaRegUser size={25} className='ml-2'/></Link> */}
       <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
         <span className="text-[10px] absolute top-4 right-12 bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-center">{products.length}</span>
       </div>  

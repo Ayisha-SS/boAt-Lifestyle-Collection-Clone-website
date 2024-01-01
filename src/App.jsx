@@ -17,6 +17,9 @@ import Chatbot from './Components/Home/Chatbot';
 import { Context } from './Components/Context/Context';
 
 import ProductContainer from './Components/ProductContainer';
+import SignUp from './Components/SignIn/SignUp';
+import Log from './Components/SignIn/Log';
+import LogIn from './Components/SignIn/LogIn';
 
 function App() {
 
@@ -40,6 +43,8 @@ function App() {
 				<Route path='wireless-speaker' element={<AllSpeaker/>}/>
 				<Route path='party-speaker' element={<AllprtySpkr/>}/>
 				<Route path='soundbar' element={<AllsoundBar/>}/>
+				<Route path='signup' element={<SignUp/>}/>
+				<Route path='login' element={<LogIn/>}/>
 			</Routes>
 		</BrowserRouter>
 
