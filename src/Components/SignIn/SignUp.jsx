@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
-import { Link, useHistory} from 'react-router-dom'
+import React,{useState,useRef} from 'react'
+import { useNavigate,Link } from 'react-router-dom'
 import {BASE_URL} from "../../axiosConfig"
-import axios from "react-axios"
+import axios from 'axios';
 
 function SignUp({remove}) {
     // const name = useRef()
@@ -29,16 +29,16 @@ function SignUp({remove}) {
     const [password,setPassword] = useState("");
     const [message,setMessage] = useState("");
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         setMessage("");
         e.preventDefault();
         axios
-            .Post(`${BASE_URL}/auth/register/`,{
+            .post(`${BASE_URL}/auth/register/`,{
                 email,
                 password,
-                first_name
+                name
             })
             .then((response) => {
                 let data = response.data.data;
@@ -46,7 +46,7 @@ function SignUp({remove}) {
                 if (status_code === 6000){
                     console.log(response.data);
                     localStorage.setItem("user_data",JSON.stringify(data));
-                    history.push("/");
+                    navigate("/");
                 }else {
                     setMessage(response.data.message);
                 }
@@ -58,13 +58,14 @@ function SignUp({remove}) {
                 }
             });
     };
+
   return (
     <div className='bg-[#313131cc] h-[100%] w-[100%] fixed top-0 bottom-0 right-0 left-0 z-10 '>     
-        <div className='mt-[80px] flex flex-col pt-4 pb-7 bg-[#fafafa] z-10 max-w-[580px] w-[100%] rounded-xl absolute right-60'>
+        <div className='mt-[80px] flex flex-col pt-4 pb-7 bg-[#fafafa] z-10 max-w-[580px] w-[50%] rounded-xl absolute right-60'>
             <div className='my-4 flex justify-center'>
-            <h4 className='text-2xl tracking-wider'>Get <strong>started</strong></h4> 
-            <span className='text-[20px] flex justify-center items-center w-7 h-7 bg-[#d0d9de33]  right-5 top-3 absolute rounded-[50%] cursor-pointer
-            ' onClick={() => remove(false)}>&times;</span>
+                <h4 className='text-2xl tracking-wider'>Get <strong>started</strong></h4> 
+                <span className='text-[20px] flex justify-center items-center w-7 h-7 bg-[#d0d9de33]  right-5 top-3 absolute rounded-[50%] cursor-pointer
+                ' onClick={() => remove(false)}>&times;</span>
             </div>
             {/* <div className='px-10 py-6'>
                 <div className='mb-[10px]  '>
@@ -82,31 +83,30 @@ function SignUp({remove}) {
                 <Link to="login">LogIn</Link>
             </div>
             {message && <p>{message}</p>}
-                <div className='flex items-center justify-center'>
-                    <button onClick={handleClick} className='px-14 py-3 rounded-lg  bg-[#d0d9de] '>SignIn</button>
-                </div> */}
+            <div className='flex items-center justify-center'>
+                <button onClick={handleClick} className='px-14 py-3 rounded-lg  bg-[#d0d9de] '>SignIn</button>
+            </div> */}
 
 
-                <form action="" onSubmit={handleSubmit}>
-                <div className='mb-[10px]  '>
-                    <input type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} value={name} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
-                />
-                </div>
-                <div className='mb-[10px]  '>
-                    <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
+                <form action="" onSubmit={handleSubmit} className='flex flex-col mx-10'>
+                    <div className='mb-[10px]  '>
+                        <input type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} value={name} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
                     />
-                </div>
-                <div className=''>
-                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
-                    />
-                </div>
-                <Link to="login">LogIn</Link>
-                {message && <p>{message}</p>}
-                <div className='flex items-center justify-center'>
-                    <button  className='px-14 py-3 rounded-lg  bg-[#d0d9de] '>SignIn</button>
-                </div>
-
-
+                    </div>
+                    <div className='mb-[10px] '>
+                        <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
+                        />
+                    </div>
+                    <div className=''>
+                        <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
+                        />
+                    </div>
+                    <Link to="login" className='flex justify-end mt-1 text-red-600'>LogIn</Link>
+                    {message && <p className='text-sm text-red-600 text-center'>{message}</p>}
+                    <div className='flex items-center justify-center'>
+                        <button  className='px-14 py-3 rounded-lg  bg-[#d0d9de] '>SignIn</button>
+                        {/* <Link to="/">Sign In</Link> */}
+                    </div>
                 </form>
         </div>
     </div>

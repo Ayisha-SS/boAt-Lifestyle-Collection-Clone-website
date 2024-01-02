@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import SignUp from './SignUp'
-import {Link} from 'react-router-dom'
 
 function Log({close}) {
 
@@ -12,8 +11,8 @@ function Log({close}) {
             <span className='font-bold text-lg cursor-pointer' onClick={()=>close(false)}>&times;</span>
         </div>
         <div className='mt-2 items-center'>
-            {/* <button className='w-[100%] text-lg rounded-lg items-center bg-black text-white' onClick={() => setLogin(true)}>Login</button> */}
-            <Link to="signup" className='text-lg rounded-lg py-2 px-6 bg-black text-white'>Sign Up</Link>
+            <button className='w-[100%] text-lg rounded-lg items-center bg-black text-white' onClick={() => setLogin(true)}>Sign Up</button>
+            {/* <Link to="signup" className='text-lg rounded-lg py-2 px-6 bg-black text-white'>Sign Up</Link> */}
         </div>
         {login && <SignUp remove={setLogin}/>} 
     </div>

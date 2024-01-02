@@ -20,6 +20,8 @@ import ProductContainer from './Components/ProductContainer';
 import SignUp from './Components/SignIn/SignUp';
 import Log from './Components/SignIn/Log';
 import LogIn from './Components/SignIn/LogIn';
+import Login from './Login';
+import LogHome from './LogHome';
 
 function App() {
 
@@ -51,8 +53,12 @@ function App() {
       </Context>
 	  
       <Chatbot/>
-
-
+	  {/* <BrowserRouter>
+	  	<Routes>
+			<Route path="/home" element={<LogHome/>}/>
+			<Route path="/" element={<Login/>}/>
+		</Routes>
+	  </BrowserRouter> */}
 
 	  {/* <ProductContainer/> */}
     </>
