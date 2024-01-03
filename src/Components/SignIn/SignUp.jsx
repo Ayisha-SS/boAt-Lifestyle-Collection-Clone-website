@@ -101,7 +101,7 @@ function SignUp({remove}) {
                         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} className='p-3 w-[100%] text-lg bg-slate-200 rounded-xl'
                         />
                     </div>
-                    <Link to="login" className='flex justify-end mt-1 text-red-600'>LogIn</Link>
+                    <Link to="/login" className='flex justify-end mt-1 text-red-600'>LogIn</Link>
                     {message && <p className='text-sm text-red-600 text-center'>{message}</p>}
                     <div className='flex items-center justify-center'>
                         <button  className='px-14 py-3 rounded-lg  bg-[#d0d9de] '>SignIn</button>

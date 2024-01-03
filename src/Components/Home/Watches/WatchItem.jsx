@@ -32,7 +32,7 @@ function WatchItem({item,searchTerm,setTerm}) {
       <div className='pt-5'>
         <div className="flex justify-between mb-3 ">
           <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
-          <Link to="smart-watch" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
+          <Link to="smart-watch" className='text-xs font-bold flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
         <div className="flex gap-4 ">
           
@@ -45,7 +45,7 @@ function WatchItem({item,searchTerm,setTerm}) {
 				return item;
 
 				}else if(item.name.toLowerCase().includes(searchTerm)){
-					// console.log(item,'searched');
+					console.log(item,'searched');
 				
 				return item;
 				}

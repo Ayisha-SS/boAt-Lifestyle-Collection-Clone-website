@@ -22,17 +22,17 @@ function NavBar() {
 
   return (
     <>
-    <div className='flex  flex-row  m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
+    <div className='flex  flex-row py-2 m-0 md:px-10 bg-white bor shadow-[0_3px_2px_rgba(0,0,0,0.2)] sticky top-0 z-10 w-[100%]'>
       <div className='w-24 p-1 mr-10'>
         <Link to='/'><img src={companyLogo} alt="Logo" /></Link>
       </div>
       <nav className='flex gap-1 font-thin  cursor-pointer text-base tracking-widest items-center w-100 relative'>
-        <Link to="categories" spy={true} smooth={true} duration={500} className='flex mr-6 relative py-4 items-center hover:font-bold navdrop'>Categories<FaAngleDown /><CollectionsdrpDown/>
+        <Link to="categories" className='flex mr-6 relative py-4 items-center hover:font-bold navdrop'>Categories<FaAngleDown /><CollectionsdrpDown/>
         </Link>
-        <Link to="boat" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>boAt Truly Yours</Link>
-        <Link to="gift" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Gift with boAt</Link>
-        <Link to="order" spy={true} smooth={true} duration={500} className='mr-6 py-4 items-center hover:font-bold '>Corporate Orders</Link>
-        <Link to="more" spy={true} smooth={true} duration={500} className='flex py-4 items-center relative hover:font-extrabold navdrop'>More<FaAngleDown /><NavDropdown />
+        <Link to="boat" className='mr-6 py-4 items-center hover:font-bold '>boAt Truly Yours</Link>
+        <Link to="gift" className='mr-6 py-4 items-center hover:font-bold '>Gift with boAt</Link>
+        <Link to="order" className='mr-6 py-4 items-center hover:font-bold '>Corporate Orders</Link>
+        <Link to="more" className='flex py-4 items-center relative hover:font-extrabold navdrop'>More<FaAngleDown /><NavDropdown />
 </Link>
       </nav>
       <div className='flex items-center ml-52 gap-3'>

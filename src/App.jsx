@@ -16,12 +16,13 @@ import Chatbot from './Components/Home/Chatbot';
 // import AddtoCart from './Components/CartPage/AddtoCart';
 import { Context } from './Components/Context/Context';
 
-import ProductContainer from './Components/ProductContainer';
+// import ProductContainer from './Components/ProductContainer';
 import SignUp from './Components/SignIn/SignUp';
 import Log from './Components/SignIn/Log';
 import LogIn from './Components/SignIn/LogIn';
-import Login from './Login';
-import LogHome from './LogHome';
+// import Login from './Login';
+// import LogHome from './LogHome';
+import TrulyYours from './Components/TrulyYours/TrulyYours';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
 				<Route path='soundbar' element={<AllsoundBar/>}/>
 				<Route path='signup' element={<SignUp/>}/>
 				<Route path='login' element={<LogIn/>}/>
+				<Route path="boat" element={<TrulyYours/>}/>
 			</Routes>
 		</BrowserRouter>
 
