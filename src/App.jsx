@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './App.css'
 import MetaTag from './Components/MetaTag';
 import NavOrder from './Components/NavBar/Navorder';
@@ -13,28 +13,25 @@ import AllSpeaker from './Components/Home/Speaker/AllSpeaker/AllSpeaker';
 import AllprtySpkr from './Components/Home/PartySpeaker/AllprtySpkr/AllprtySpkr';
 import AllsoundBar from './Components/Home/SoundBars/AllsoundBar/AllsoundBar';
 import Chatbot from './Components/Home/Chatbot';
-// import AddtoCart from './Components/CartPage/AddtoCart';
 import { Context } from './Components/Context/Context';
-
-// import ProductContainer from './Components/ProductContainer';
 import SignUp from './Components/SignIn/SignUp';
 import Log from './Components/SignIn/Log';
 import LogIn from './Components/SignIn/LogIn';
-// import Login from './Login';
-// import LogHome from './LogHome';
 import TrulyYours from './Components/TrulyYours/TrulyYours';
+
+
 
 function App() {
 
 	
-
   return (
     <>
+	
       <MetaTag/>
       <NavOrder/>
 
       <Context>
-		
+
 		<BrowserRouter>
 			<NavBar/>
 			<Routes>
@@ -55,14 +52,7 @@ function App() {
       </Context>
 	  
       <Chatbot/>
-	  {/* <BrowserRouter>
-	  	<Routes>
-			<Route path="/home" element={<LogHome/>}/>
-			<Route path="/" element={<Login/>}/>
-		</Routes>
-	  </BrowserRouter> */}
-
-	  {/* <ProductContainer/> */}
+	  
     </>
   )
 }

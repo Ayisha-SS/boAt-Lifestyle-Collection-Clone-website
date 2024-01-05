@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-import { Message } from 'semantic-ui-react'
 import axios from 'axios'
 import {BASE_URL} from "../../axiosConfig"
 import { useNavigate,Link } from 'react-router-dom';
@@ -8,6 +6,7 @@ import { useNavigate,Link } from 'react-router-dom';
 
 
 function LogIn() {
+	
 	const [username,setUsername] = useState("");
 	const [password,setPassword] = useState("");
     const [message,setMessage] = useState("");
@@ -53,7 +52,9 @@ function LogIn() {
 				onChange={(e) => setPassword(e.target.value)}/>
 			{message && <p className='text-sm text-red-600 text-center'>{message}</p>}
 			<div className='flex items-center justify-center'>
-				<Link to="/">LogIn</Link>
+				
+					<Link to="/">LogIn</Link>
+				
 				{/* <button  className='px-14 py-3 rounded-lg  bg-[#d0d9de] active:red'>LogIn</button> */}
             </div>
 		</form>
