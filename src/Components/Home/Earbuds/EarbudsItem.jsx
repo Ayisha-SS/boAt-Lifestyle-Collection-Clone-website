@@ -26,7 +26,7 @@ function EarbudsItem({item,searchTerm,setTerm}) {
     }
  
 const filterProducts  = item 
-.filter((item) =>{
+.filter((item) => {
     
     if(searchTerm == undefined){
         return item;    

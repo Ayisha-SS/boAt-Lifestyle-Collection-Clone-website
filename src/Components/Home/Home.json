@@ -2,7 +2,7 @@
     "earbuds":[
         {
             "id":1,
-            "type":"earbuds1",
+            "type":"earbuds",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
             "image":"src/assets/images/airpodes/AD_131.webp",
@@ -14,7 +14,7 @@
         },
         {
             "id":2,
-            "type":"earbuds2",
+            "type":"earbuds",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
             "image":"src/assets/images/airpodes/AD-2.jpg",
@@ -26,7 +26,7 @@
         },
         {
             "id":3,
-            "type":"earbuds3",
+            "type":"earbuds",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
             "image":"src/assets/images/airpodes/AD-3.jpg",
@@ -38,7 +38,7 @@
         },
         {
             "id":4,
-            "type":"earbuds4",
+            "type":"earbuds",
             "status":"Engraving Available",
             "hours":"60 Hours playback",
             "image":"src/assets/images/airpodes/AD-4.jpg",
