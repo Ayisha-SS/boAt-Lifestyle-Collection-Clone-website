@@ -1,7 +1,8 @@
-import React,{useState,useRef} from 'react'
+import React,{useState,useContext} from 'react'
 import { useNavigate,Link } from 'react-router-dom'
 import {BASE_URL} from "../../axiosConfig"
 import axios from 'axios';
+import { Cart } from '../Context/Context';
 
 function SignUp({remove}) {
     // const name = useRef()
@@ -29,6 +30,8 @@ function SignUp({remove}) {
     const [password,setPassword] = useState("");
     const [message,setMessage] = useState("");
 
+	const {updateUserData} = useContext(Cart)
+
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -46,6 +49,7 @@ function SignUp({remove}) {
                 if (status_code === 6000){
                     console.log(response.data);
                     localStorage.setItem("user_data",JSON.stringify(data));
+				    updateUserData({type:"LOGIN",payload:data});
                     navigate("login");
                 }else {
                     setMessage(response.data.message);

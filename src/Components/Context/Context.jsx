@@ -1,4 +1,4 @@
-import React, { useReducer,createContext, useEffect  } from 'react'
+import React, { useReducer,createContext, useEffect,useState  } from 'react'
 import reducer, { initialState } from './Reducers';
 import storeReducer from './Reducers';
 
@@ -61,15 +61,23 @@ export const Context = ({children}) => {
 		})
 	}
 
-  //sorting function
-  // const sorting = () => {
-  //   dispatch({type:"GET_SORT_VALUE"})
-  // };
-
-  // useEffect(() => {
-  //   // console.log("hii");
-  //   dispatch({type:"SORTING_PRODUCTS"})
-  // },[state.sorting_value]);
+//logout...
+  const [userData,setUserData] = useState({});
+  const updateUserData = (action) => {
+    switch (action.type){
+      case "LOGOUT":
+        setUserData(null);
+        localStorage.clear();
+        break;
+      case "LOGIN":
+        setUserData(action.payload);
+      default:
+        break;
+    }
+  };
+	useEffect(() => {
+		setUserData(JSON.parse(localStorage.getItem("user_data")));
+	}, []);
 
   const value = {
     total:state.total,
@@ -78,7 +86,9 @@ export const Context = ({children}) => {
     removeFromCart,
 	  setDecrease,
 	  setIncrease,
-    // sorting,
+    userData,
+    updateUserData,
+   
     
   }
 

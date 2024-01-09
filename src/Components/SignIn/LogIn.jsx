@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext} from 'react'
 import axios from 'axios'
 import {BASE_URL} from "../../axiosConfig"
 import { useNavigate,Link } from 'react-router-dom';
+import { Cart } from '../Context/Context';
+
 
 
 
@@ -10,26 +12,31 @@ function LogIn() {
 	const [username,setUsername] = useState("");
 	const [password,setPassword] = useState("");
     const [message,setMessage] = useState("");
+
+	const {updateUserData} = useContext(Cart)
+
 	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		setMessage("")
 		e.preventDefault();
-		axios.post(`${BASE_URL}/auth/token/`,{
-			username,
-			password
-		})
-		.then((response) => {
-			let data = response.data;
-			localStorage.setItem("user_data",JSON.stringify(data));
-			navigate("/");
-		})
-		.catch((error) => {
-			console.error(error.response.status);
-			if(error.response.status == 401){
-				setMessage(error.response.data.detail);
-			}
-		});
+		axios
+			.post(`${BASE_URL}/auth/token/`,{
+				username,
+				password
+			})
+			.then((response) => {
+				let data = response.data;
+				localStorage.setItem("user_data",JSON.stringify(data));
+				updateUserData({type:"LOGIN",payload:data});
+				navigate("/");
+			})
+			.catch((error) => {
+				console.error(error.response.status);
+				if(error.response.status == 401){
+					setMessage(error.response.data.detail);
+				}
+			});
 	};
   return (
     <div className='bg-[#313131cc] h-[100%] w-[100%] fixed top-0 bottom-0 right-0 left-0 z-10 '>

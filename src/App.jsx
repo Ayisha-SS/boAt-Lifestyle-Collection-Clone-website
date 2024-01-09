@@ -20,9 +20,7 @@ import LogIn from './Components/SignIn/LogIn';
 import TrulyYours from './Components/TrulyYours/TrulyYours';
 
 
-
 function App() {
-
 	
   return (
     <>
