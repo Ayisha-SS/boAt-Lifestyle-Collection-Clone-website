@@ -7,8 +7,10 @@ body {
 }
 .dropdown{
   display: none;
+  /* opacity: 0; */
 }
 .navdrop:hover > .dropdown{
   display: flex;
+  /* opacity: 1; */
 }
 /* @import "./Components/Style.css" */
