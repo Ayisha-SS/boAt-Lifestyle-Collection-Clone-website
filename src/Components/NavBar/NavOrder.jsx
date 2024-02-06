@@ -8,6 +8,6 @@ function NavOrder() {
         </div>
    
   )
-}
+};
 
 export default NavOrder
