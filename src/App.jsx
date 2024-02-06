@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import './App.css'
 import MetaTag from './Components/MetaTag';
-import NavOrder from './Components/NavBar/Navorder';
+import NavOrder from './Components/NavBar/NavOrder';
 import NavBar from './Components/NavBar/NavBar';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import HomLink from './Components/Home/HomLink';
