@@ -1,40 +1,36 @@
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import earbud from "../Home.json"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import PopUp from "./PopUp/PopUp"
 import { Cart } from '../../Context/Context';
 
-function EarbudsItem({items,searchTerm,setTerm}) {
+function EarbudsItem({searchTerm}) {
 
-    items = earbud.earbuds
+    const items = earbud.earbuds
 
     const [popup,setPopup] = useState(false)
-    const [searchedItems,setSearchedItems] = useState(earbud)
+    // const [searchedItems,setSearchedItems] = useState(earbud)
 
-    const {addToCart,dispatch} = useContext(Cart);
+    const {addToCart} = useContext(Cart);
    
-    const handleAdd = (item) =>{
-        // console.log(item,"item");
+    const handleAdd = (item) => {
         addToCart(item)
-    }
+    };
 
-    if(popup){
+    if(popup) {
         document.body.classList.add("overflow-y-hidden")
-    }else{
+    } else {
         document.body.classList.remove("overflow-y-hidden")
     }
  
-const filterProducts  = items
-.filter((item) => {
-    
+const filterProducts  = items.filter((item) => {
     if(searchTerm == undefined){
         return item;    
-    }else{
+    } else {
         return item.name.toLowerCase().includes(searchTerm.toLowerCase());
     }
 });
-
 
   return (
     <>
@@ -44,13 +40,11 @@ const filterProducts  = items
             <Link to="wireless-earbuds" className='text-xs flex text-blue-800 font-bold'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
         <div className="flex gap-4">
-        
 
 {/* PRODUCT CARD... */}
             {filterProducts
-            
-            .map((item)=> {
-                return (
+            .map((item)=> 
+                 (
                     <div key={item.id} className='w-[25%] flex flex-col relative rounded-2xl shadow-3xl'>
                         <div>
                             <span className='absolute text-[10px] tracking-tight font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1'>{item.status}</span>
@@ -85,7 +79,7 @@ const filterProducts  = items
                         </div>  
                     </div>
                 )
-            })}
+            )}
         </div>
     </div>
         {popup && <PopUp close={setPopup}/>}
@@ -93,4 +87,4 @@ const filterProducts  = items
   )
 }
 
-export default EarbudsItem
+export default EarbudsItem;

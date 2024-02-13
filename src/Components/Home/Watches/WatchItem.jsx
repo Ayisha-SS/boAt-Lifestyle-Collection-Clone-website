@@ -1,31 +1,37 @@
-import React,{useState,useContext} from 'react'
+import React,{ useState, useContext } from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import watch from "../Home.json"
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import PopUp from '../Earbuds/PopUp/PopUp';
 import { Cart } from '../../Context/Context';
 
-function WatchItem({items,searchTerm,setTerm}) {
+function WatchItem({searchTerm}) {
 
-  items = watch.watches
+  const items = watch.watches
 
   const [popup,setPopup] = useState(false)   //popup
-  const [searchedItems,setSearchedItems] = useState(watch)
+//   const [searchedItems,setSearchedItems] = useState(watch)
 
-  const {addToCart,dispatch} = useContext(Cart);
+  const {addToCart} = useContext(Cart);
 
   const handleAdd = (item) =>{
-    // console.log(item,"item");
     addToCart(item)
-}
-
+};
 
 //popup
-  if(popup){
+if(popup) {
     document.body.classList.add("overflow-y-hidden")
-}else{
+} else {
     document.body.classList.remove("overflow-y-hidden")
 }
+
+const filterProducts  = items.filter((item) => {
+    if(!searchTerm){
+        return true;    
+    } else {
+        return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+});
 
   return (
     <>
@@ -36,23 +42,11 @@ function WatchItem({items,searchTerm,setTerm}) {
           <Link to="smart-watch" className='text-xs font-bold flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
         <div className="flex gap-4 ">
-          
-          
+        
 {/* PRODUCT CARD... */}
-        {items
-          	.filter((item) => {
-				if(searchTerm == undefined){
-					// console.log(item,'all');
-				return item;
-
-				}else {
-					// console.log(item,'searched');
-				
-				return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-				}
-        	})
-        	.map((item) => {
-            return (
+        {filterProducts
+        	.map((item) => 
+             (
               	<div key={item.id} className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>
                 	<div>
                 		<span className='absolute text-[10px] tracking-tight font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1'>{item.status}</span>
@@ -62,7 +56,7 @@ function WatchItem({items,searchTerm,setTerm}) {
 						<img src={item.image} alt={item.name} className='w-[100%] rounded-lg' />
 					</div>
 					<div className="px-2.5 py-6 bg-slate-100">
-						<div className=" text-4">
+						<div className="text-4">
 							<div className='flex justify-between'>
 								<h5 className='font-extrabold '>{item.name}</h5>
 								<p>{item.color}</p>
@@ -85,14 +79,12 @@ function WatchItem({items,searchTerm,setTerm}) {
 						</div>
 					</div>
             	</div>
-            	)
-          	})}
+            	))}
         </div>
     </div>
-	{popup && <PopUp close={setPopup}/>}
-
+		{popup && <PopUp close={setPopup}/>}
     </>
   )
 }
 
-export default WatchItem
+export default WatchItem;
