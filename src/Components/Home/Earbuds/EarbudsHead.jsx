@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function EarbudsHead() {
   return (
     <>
-        <div className='flex  '>
+        <div className='flex'>
             <div className="mt-40 mb-28 w-1/2">
                 <div className='tracking-wider'>
                     <h2 className='text-8xl font-thin'>True Wireless <span className='font-bold'>Earbuds</span></h2>

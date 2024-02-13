@@ -1,100 +1,248 @@
-import React, { useReducer,createContext, useEffect,useState  } from 'react'
+// import React, { useReducer,createContext, useEffect,useState  } from 'react'
+// import { initialState } from './Reducers';
+// import storeReducer from './Reducers';
+
+
+// export const Cart = createContext();
+
+// export const Context = ({children}) => {
+//   const [state,dispatch] = useReducer(storeReducer,initialState);
+
+//   //add item...
+//   const addToCart = (item) =>{
+//     const updateCart = [...state.products,item];
+//     updatePrice(updateCart)
+
+//     dispatch({
+//         type:"add",
+//         payload:updateCart
+//     })
+//   }
+
+//   //remove item...
+//   const removeFromCart = (item) =>{
+//     const updateCart = state.products.filter((currentProduct) => currentProduct.type !== item.type);
+//     updatePrice(updateCart)
+
+//     dispatch({
+//         type:"remove",
+//         payload:updateCart
+//     })
+//   }
+
+//   //update price...
+//   const updatePrice = (products) =>{
+//     let total = 0;
+//     products.forEach(item => {
+//     	total += item.price
+//     });
+
+//     dispatch({
+//         type:"update price",
+//         payload:total
+//     })
+//   };
+
+
+
+// //logout...
+//   const [userData,setUserData] = useState({});
+//   const updateUserData = (action) => {
+//     switch (action.type){
+//       case "LOGOUT":
+//         setUserData(null);
+//         localStorage.clear();
+//         break;
+//       case "LOGIN":
+//         setUserData(action.payload);
+//         break;
+//       default:
+//         break;
+//     }
+//   };
+// 	useEffect(() => {
+// 		setUserData(JSON.parse(localStorage.getItem("user_data")));
+// 	}, []);
+
+//   const value = {
+//     total:state.total,
+//     products:state.products,
+//     addToCart,
+//     removeFromCart,
+// 	  setDecrease,
+// 	  setIncrease,
+//     userData,
+//     updateUserData,  
+//   };
+
+//   return <Cart.Provider value={value}>
+//     {children}
+//   </Cart.Provider>   
+// }
+
+
+
+import React, { useReducer, createContext, useEffect, useState } from 'react';
 import reducer, { initialState } from './Reducers';
 import storeReducer from './Reducers';
 
-
 export const Cart = createContext();
 
-export const Context = ({children}) => {
-  const [state,dispatch] = useReducer(storeReducer,initialState);
+export const Context = ({ children }) => {
+    const [state, dispatch] = useReducer(storeReducer, initialState);
 
-  //add item...
-  const addToCart = (item) =>{
-    const updateCart = [...state.products,item];
-    updatePrice(updateCart)
+    // Add item to cart
+    const addToCart = (item) => {
+        const existingItemIndex = state.products.findIndex((prod) => prod.type === item.type);
+        let updatedProducts = [];
 
-    dispatch({
-        type:"add",
-        payload:updateCart
-    })
-  }
+        if (existingItemIndex !== -1) {
+            const updatedItem = { ...state.products[existingItemIndex], amount: state.products[existingItemIndex].amount + 1 };
+            updatedProducts = [
+                ...state.products.slice(0, existingItemIndex),
+                updatedItem,
+                ...state.products.slice(existingItemIndex + 1),
+            ];
+        } else {
+            updatedProducts = [...state.products, { ...item, amount: 1 }];
+        }
+        updatePrice(updatedProducts);
+        dispatch({
+            type: "add",
+            payload: updatedProducts,
+        });
+    };
 
-  //remove item...
-  const removeFromCart = (item) =>{
-    const updateCart = state.products.filter((currentProduct) => currentProduct.type !== item.type);
-    updatePrice(updateCart)
+    // Remove item from cart
+    const removeFromCart = (item) => {
+        const updatedCart = state.products.filter((currentProduct) => currentProduct.type !== item.type);
+        updatePrice(updatedCart);
 
-    dispatch({
-        type:"remove",
-        payload:updateCart
-    })
-  }
+        dispatch({
+            type: "remove",
+            payload: updatedCart,
+        });
+    };
 
-  //update price...
-  const updatePrice = (products) =>{
-    let total = 0;
-    products.forEach(item => {
-    	total += item.price
-    });
+    // Update price
+    const updatePrice = (products) => {
+        const total = products.reduce((acc, curr) => acc + curr.price * curr.amount, 0);
+        dispatch({
+            type: "update price",
+            payload: total,
+        });
+    };
 
-    dispatch({
-        type:"update price",
-        payload:total
-    })
-  }
+    // Decrement item
+    const setDecrease = (type) => {
+        const updatedProducts = state.products.map((currentProduct) => {
+            if (currentProduct.type === type && currentProduct.amount > 1) {
+                return { ...currentProduct, amount: currentProduct.amount - 1 };
+            }
+            return currentProduct;
+        });
+        updatePrice(updatedProducts);
 
-//decrement item...
-	const setDecrease = (type) =>{
-		const updatedProduct = state.products.map((currentProduct) =>currentProduct.type === action.payload)
-		const decAmount = currentProduct.amount - 1;
-		dispatch({
-			type:"set_Decrement",
-			payload:type
-		})
-  	}
+        dispatch({
+            type: "set_Decrement",
+            payload: updatedProducts,
+        });
+    };
 
-//increment item...
-	const setIncrease = (type) =>{
-		dispatch({
-			type:"set_Increment",
-			payload:type
-		})
-	}
+    // Increment item
+    const setIncrease = (type) => {
+        const updatedProducts = state.products.map((currentProduct) => {
+            if (currentProduct.type === type) {
+                return { ...currentProduct, amount: currentProduct.amount + 1 };
+            }
+            return currentProduct;
+        });
+        updatePrice(updatedProducts);
 
-//logout...
-  const [userData,setUserData] = useState({});
-  const updateUserData = (action) => {
-    switch (action.type){
-      case "LOGOUT":
-        setUserData(null);
-        localStorage.clear();
-        break;
-      case "LOGIN":
-        setUserData(action.payload);
-      default:
-        break;
-    }
+        dispatch({
+            type: "set_Increment",
+            payload: updatedProducts,
+        });
+    };
+
+
+    const calculateTotal = (products) => {
+      let total = 0;
+      products.forEach((product) => {
+          total += product.price * product.amount;
+      });
+      return total;
   };
-	useEffect(() => {
-		setUserData(JSON.parse(localStorage.getItem("user_data")));
-	}, []);
 
-  const value = {
-    total:state.total,
-    products:state.products,
-    addToCart,
-    removeFromCart,
-	  setDecrease,
-	  setIncrease,
-    userData,
-    updateUserData,
-   
+    //quantity increment...
+    const incrementItem = (type) => {
+      const updatedProducts = state.products.map((product) => {
+          if (product.type === type) {
+              return { ...product, amount: product.amount + 1 };
+          }
+          return product;
+      });
+      const totalPrice = calculateTotal(updatedProducts);
+      
+      dispatch({
+          type: "increment",
+          payload: updatedProducts,
+          total: totalPrice,
+      });
+  };
+
+  //quantity decrement...
+  const decrementItem = (type) => {
+    const updatedProducts = state.products.map((product) => {
+        if (product.type === type && product.amount > 1) {
+            return { ...product, amount: product.amount - 1 };
+        }
+        return product;
+    });
+    const totalPrice = calculateTotal(updatedProducts);
     
-  }
+    dispatch({
+        type: "decrement",
+        payload: updatedProducts,
+        total: totalPrice,
+    });
+};
 
-  return <Cart.Provider value={value}>
-    {children}
-  </Cart.Provider>
-    
-}
+    // Logout
+    const [userData, setUserData] = useState({});
+    const updateUserData = (action) => {
+        switch (action.type) {
+            case "LOGOUT":
+                setUserData(null);
+                localStorage.clear();
+                break;
+            case "LOGIN":
+                setUserData(action.payload);
+                break;
+            default:
+                break;
+        }
+    };
+    useEffect(() => {
+        setUserData(JSON.parse(localStorage.getItem("user_data")));
+    }, []);
 
+    const value = {
+        total: state.total,
+        products: state.products,
+        addToCart,
+        removeFromCart,
+        setDecrease,
+        setIncrease,
+        userData,
+        updateUserData,
+        incrementItem,
+        decrementItem,
+    };
+
+    return (
+        <Cart.Provider value={value}>
+            {children}
+        </Cart.Provider>
+    );
+};

@@ -8,23 +8,37 @@ const storeReducer = (state,action) =>{
             return{
                 ...state,
                 products:action.payload
-            } 
+            };
         case "remove":
-            return{
+            return {
                 ...state,
                 products:action.payload
-            }
+            };
         case "update price":
-            return{
+            return {
                 ...state,
                 total:action.payload
-            }
-        
-    
-            
-   
+            };
 
-        default:throw Error("Cannot match case in reducer")
+        case "set_Decrement":
+        case "set_Increment":
+            return {
+                ...state,
+                products: action.payload,
+                // total:action.payload.reduce((acc,curr) => acc + curr.price * curr.amount,0),
+                // total:action.total,
+            };
+
+        case "increment":
+        case "decrement":
+            return {
+                ...state,
+                products: action.payload,
+                total: action.total,
+            };
+        
+        default:
+            throw Error("Cannot match case in reducer")
     }
 }
 export default storeReducer;
