@@ -61,8 +61,6 @@ function Sort({ setViewAll, viewAll }) {
     setViewAll(sortedProducts);
   };
   console.log(viewAll);
-
-
   return (
     <div className='pt-5'>
       <form action="#">

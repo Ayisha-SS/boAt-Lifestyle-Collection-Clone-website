@@ -47,7 +47,7 @@ function NavBar() {
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
       {/* <Link to="signup" ><FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/></Link> */}
       <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
-        <span className="text-[10px] absolute top-4 right-12 bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-center">{products.length}</span>
+        <span className="text-[8px] absolute top-5 right-14 bg-red-500 text-white rounded-full px-2 py-1 text-center">{products.length}</span>
       </div>  
       </div>
     </div>

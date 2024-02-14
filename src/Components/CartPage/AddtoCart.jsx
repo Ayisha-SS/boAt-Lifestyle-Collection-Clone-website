@@ -10,10 +10,15 @@ import StripeCheckoutButton from '../StripeCheckout';
 
 function AddtoCart({remove}) {
 
-  const {products,total} = useContext(Cart);
-  // console.log(products,"products");
+  const {products,total,clearCart} = useContext(Cart);
+
+  const handleClearCart = () => {
+    clearCart();
+    remove(false);
+  };
+
   return (
-    <div className='p-3 flex flex-col h-[100%] w-[30%] translate-x-0 transition ease-[cubic-bezier(0.75,0,1.75,1)] bg-white  right-0 z-10 top-0 fixed overflow-hidden'>
+    <div className='p-3 flex flex-col h-[100%] w-[30%] translate-x-0 transition ease-[cubic-bezier(0.75,0,1.75,1)] bg-white  right-0 z-10 top-0 fixed '>
         <div className='flex justify-between'>
           <h6 className='text-xl py-4 font-bold'>Your Cart</h6>
           <span onClick={() => remove(false)} className='text-xl cursor-pointer'>&times;</span>
@@ -26,8 +31,8 @@ function AddtoCart({remove}) {
             <div className='mt-8'>
                 <Link to="/" className='px-7 py-3 rounded-xl text-base font-bold text-white bg-black'>Start Shopping</Link>
             </div>
-        </div>:""}
-          <div>{products.map((item,index) =>
+        </div>:
+          <div className='overflow-y-auto'>{products.map((item,index) =>
             <CartProducts
                 key={index}
                 item={item}
@@ -37,8 +42,8 @@ function AddtoCart({remove}) {
           <span className='text-xl font-bold'>Total: &#8377;{total.toFixed(2)}</span>
         </div>
         </div>
-        
-        
+          }
+         <button onClick={handleClearCart} className="bg-red-500 text-white px-4 py-2 mt-4 rounded-md">Clear Cart</button>
     </div>
   )
 }

@@ -36,6 +36,9 @@ const storeReducer = (state,action) =>{
                 products: action.payload,
                 total: action.total,
             };
+
+        case "clearCart":
+            return initialState;
         
         default:
             throw Error("Cannot match case in reducer")

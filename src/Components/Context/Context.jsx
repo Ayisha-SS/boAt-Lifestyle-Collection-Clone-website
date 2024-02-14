@@ -227,6 +227,12 @@ export const Context = ({ children }) => {
         setUserData(JSON.parse(localStorage.getItem("user_data")));
     }, []);
 
+
+    //clear cart....
+    const clearCart = () => {
+        dispatch({type:"clearCart"});
+    };
+
     const value = {
         total: state.total,
         products: state.products,
@@ -238,6 +244,7 @@ export const Context = ({ children }) => {
         updateUserData,
         incrementItem,
         decrementItem,
+        clearCart,
     };
 
     return (
