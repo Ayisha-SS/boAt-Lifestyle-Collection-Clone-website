@@ -1,8 +1,16 @@
 export const initialState = {
     total:0,
     products:[],
+    // filters: {
+    //     color: '',
+    //     priceRange: { min: 0, max: 100 }, // Example price range filter
+    //     bestFor: '',
+    //     noiseCancellation: '',
+    //     features: '',
+    //     availability: ''
+    //   }
 }
-const storeReducer = (state,action) =>{
+const storeReducer = (state,action) => {
     switch (action.type) {
        case "add":
             return{
@@ -34,6 +42,15 @@ const storeReducer = (state,action) =>{
                 products: action.payload,
                 total: action.total,
             };
+
+        // case 'SET_FILTER':
+        //     return {
+        //       ...state,
+        //       filters: {
+        //         ...state.filters,
+        //         [action.payload.filterName]: action.payload.value
+        //       }
+        //     };
 
         case "clearCart":
             return initialState;

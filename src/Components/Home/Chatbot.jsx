@@ -33,7 +33,7 @@ function Chatbot() {
             ))}
           </div>
           <div className="chat-input">
-            <input type="text" placeholder="Type your message..." className='w-full px-4 py-2 border-t border-gray-200 focus:outline-none' onKeyDown={(e) => {
+            <input type="text" placeholder="Type your message..." className='w-full text-black px-4 py-2 border-t border-gray-200 focus:outline-none' onKeyDown={(e) => {
               if (e.key === 'Enter' && e.target.value.trim() !== '') {
                 handleMessageSubmit(e.target.value);
                 e.target.value = '';

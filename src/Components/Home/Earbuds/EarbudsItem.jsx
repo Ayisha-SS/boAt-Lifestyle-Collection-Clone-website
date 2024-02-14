@@ -8,10 +8,9 @@ import { Cart } from '../../Context/Context';
 function EarbudsItem({searchTerm}) {
 
     const items = earbud.earbuds
-
-    const [popup,setPopup] = useState(false)
     const {addToCart} = useContext(Cart);
-   
+    const [popup,setPopup] = useState(false)
+    
     const handleAdd = (item) => {
         addToCart(item)
     };
@@ -87,3 +86,4 @@ function EarbudsItem({searchTerm}) {
 }
 
 export default EarbudsItem;
+
