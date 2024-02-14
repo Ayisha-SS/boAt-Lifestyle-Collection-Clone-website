@@ -1,9 +1,9 @@
-import React,{useContext} from 'react'
+import React,{ useContext } from 'react'
 import { Cart } from '../Context/Context';
 import { MdDelete } from "react-icons/md";
 import StripeCheckoutButton from '../StripeCheckout';
 
-const CartProducts = ({item}) => {
+const CartProducts = ({ item }) => {
     const { removeFromCart, incrementItem,decrementItem } = useContext(Cart);
 
     const handleRemove = () =>{
@@ -28,11 +28,14 @@ const CartProducts = ({item}) => {
             </div>
             <MdDelete className='ml-3 text-2xl text-center hover:bg-slate-300 cursor-pointer' onClick={() =>{handleRemove(item)}}/>
             <div>
-                <StripeCheckoutButton price={item.price * item.amount}/>
+                <StripeCheckoutButton price={item.price * item.amount} removeFromCart={() => handleRemove(item)}/>
             </div>
         </div>
     </>
   )
-}
+};
+
+
+
 
 export default CartProducts

@@ -16,21 +16,20 @@ function EarbudsItem({searchTerm}) {
         addToCart(item)
     };
 
-    const filteredItems = items.filter(item => !searchTerm || item.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    // if(popup) {
-    //     document.body.classList.add("overflow-y-hidden")
-    // } else {
-    //     document.body.classList.remove("overflow-y-hidden")
-    // }
+    if(popup) {
+        document.body.classList.add("overflow-y-hidden")
+    } else {
+        document.body.classList.remove("overflow-y-hidden")
+    }
  
-// const filterProducts  = items.filter((item) => {
-//     if(searchTerm == undefined){
-//         return item;    
-//     } else {
-//         return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-//     }
-// });
+    const filterProducts  = items.filter((item) => {
+        if(!searchTerm){
+            return true;    
+        } else {
+            return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+    });
 
   return (
     <>
@@ -42,7 +41,7 @@ function EarbudsItem({searchTerm}) {
         <div className="flex gap-4">
 
 {/* PRODUCT CARD... */}
-            {filteredItems
+            {filterProducts
             .map((item)=> 
                  (
                     <div key={item.id} className='w-[25%] flex flex-col relative rounded-2xl shadow-3xl'>

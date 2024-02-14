@@ -13,7 +13,7 @@ function PrtyspkrHead() {
       <div className='tracking-wider'>
         <h2 className=' text-[84px] font-thin ml-32 '>Party <span className='font-bold'>Speaker</span></h2>
       </div>
-      <h4 className='text-3xl font-medium tracking-wider ml-[410px]'>Starting from <span className='font-extrabold'>&#8377;1199&lowast;</span></h4>
+      <h4 className='text-3xl font-medium tracking-wider ml-[410px]'>Starting from <span className='font-extrabold'>&#8377;1199<sup>&lowast;</sup></span></h4>
       <div className='mt-2 ml-[550px] w-40'>
         <Link to="party-speaker" className='flex py-2 rounded-lg bg-black text-white text-sm px-4 tracking-wider items-center'>Shop Product <IoArrowForwardCircleOutline size={20} className='ml-1'/></Link>
       </div>
