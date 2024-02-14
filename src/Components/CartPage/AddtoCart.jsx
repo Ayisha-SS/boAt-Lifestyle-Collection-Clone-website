@@ -1,11 +1,7 @@
 import React, { useContext } from 'react'
-import HomLink from '../Home/HomLink'
 import { Link } from "react-router-dom"
-// import { Cart } from '../Context/Store'
-import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CartProducts from './CartProducts';
 import { Cart } from '../Context/Context';
-import StripeCheckoutButton from '../StripeCheckout';
 
 
 function AddtoCart({remove}) {

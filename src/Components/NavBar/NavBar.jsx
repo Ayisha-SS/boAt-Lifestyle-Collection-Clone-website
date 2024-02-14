@@ -1,13 +1,11 @@
-import React, { useState,useContext} from 'react';
+import React, { useState,useContext,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaAngleDown,FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import companyLogo from '../../assets/images/boat.jpeg';
 import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
-import SignUp from '../SignIn/SignUp';
 import AddtoCart from '../CartPage/AddtoCart';
-// import { Cart } from '../Context/Context'
 import Log from '../SignIn/Log';
 import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CollectionsdrpDown from './CollectionsdrpDown';
@@ -19,6 +17,13 @@ function NavBar() {
   const {products} = useContext(Cart);
   const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+    if (cart) {
+      document.body.style.overflow = 'hidden'; 
+    } else {
+      document.body.style.overflow = ''; 
+    }
+  }, [cart]);
 
   return (
     <>
@@ -45,7 +50,6 @@ function NavBar() {
       </div>      
       <div className='flex gap-2 '>
       <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      {/* <Link to="signup" ><FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/></Link> */}
       <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
         <span className="text-[8px] absolute top-5 right-14 bg-red-500 text-white rounded-full px-2 py-1 text-center">{products.length}</span>
       </div>  

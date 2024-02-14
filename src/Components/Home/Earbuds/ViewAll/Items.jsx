@@ -69,19 +69,20 @@
 
 import React, { useState } from 'react';
 import ViewAll from "./ViewItem.json";
-import Sort from './Sort';
 
 function Items() {
   const [viewAll, setViewAll] = useState(ViewAll);
 
-  const handleSorting = (sortedProducts) => {
-    setViewAll(sortedProducts);
-  };
+  
+
+  
   return (
     <div>
-      {/* <Sort handleSorting={handleSorting} viewAll={viewAll} /> */}
+      
       <div className='pt-6 flex flex-wrap gap-6'>
-        {viewAll.map((item) => (
+        {
+        viewAll
+        .map((item) => (
           <div key={item.id} className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
             <div className='w-[40%] mb-2 relative'>
               <img src={item.image} alt="Airpode-131" className='w-[100%] rounded-lg'/>

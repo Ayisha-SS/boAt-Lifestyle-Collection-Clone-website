@@ -8,6 +8,9 @@ function Filter() {
   // const handleModal = () =>{
   //   setModal(!modal)
   // }
+
+  
+
   return (
     <div className='pt-5 '>
         <button onClick={() => setModal(true)} className='flex text-lg font-bold border-black px-4 py-2 rounded-md bg-[#eff4f7]'><PiArrowsLeftRightDuotone />Filter By <MdKeyboardArrowDown /></button>
@@ -42,3 +45,5 @@ function Filter() {
 }
 
 export default Filter
+
+

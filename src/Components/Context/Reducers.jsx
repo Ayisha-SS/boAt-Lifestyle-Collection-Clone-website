@@ -25,8 +25,6 @@ const storeReducer = (state,action) =>{
             return {
                 ...state,
                 products: action.payload,
-                // total:action.payload.reduce((acc,curr) => acc + curr.price * curr.amount,0),
-                // total:action.total,
             };
 
         case "increment":
