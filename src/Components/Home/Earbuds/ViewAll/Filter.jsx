@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PiArrowsLeftRightDuotone } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import ViewAll from "./ViewItem.json"
 
 function Filter() {
   const [modal, setModal] = useState(false);
+  const [colorFilter, setColorFilter] = useState('');
+  const [viewAll,setViewAll] = useState(ViewAll);
+
+
+  const applyFilter = () => {
+    let filteredProducts = ViewAll;
+    if (colorFilter) {
+      filteredProducts = filteredProducts.filter(product => product.color === colorFilter);
+    }
+    setViewAll(filteredProducts)
+  };
+
+  // const getFilter = () =>{
+  //   return viewAll;
+  // }
+  useEffect(()=>{
+    applyFilter()
+  },[colorFilter])
+
 
   // const handleModal = () =>{
   //   setModal(!modal)
@@ -36,7 +56,7 @@ function Filter() {
             <div className="h-[70vh] w-[45%] bg-slate-200">
               <ul className="text-base px-3 py-4">
                 <li className="mb-6 cursor-pointer font-bold">Category</li>
-                <li className="mb-6 cursor-pointer">Color</li>
+                <li className="mb-6 cursor-pointer" onClick={()=>setColorFilter('blue')}>Color</li>
                 <li className="mb-6 cursor-pointer">Price</li>
                 <li className="mb-6 cursor-pointer">Best For</li>
                 <li className="mb-6 cursor-pointer">Noise Cancellation</li>
@@ -60,4 +80,12 @@ function Filter() {
   );
 }
 
-export default Filter;
+const getFilter = (viewAll, colorFilter) => {
+  let filteredProducts = viewAll;
+  if (colorFilter) {
+    filteredProducts = filteredProducts.filter(product => product.color === colorFilter);
+  }
+  return filteredProducts;
+};
+// export {getFilter};
+export { Filter, getFilter };
