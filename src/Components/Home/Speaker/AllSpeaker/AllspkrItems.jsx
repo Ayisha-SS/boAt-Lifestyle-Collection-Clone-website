@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import SpkrItems from "./AllspkrItems.json"
 
 function AllspkrItems() {
+
+    const {addToCart} = useContext(Cart);
+    const handleAdd = (item) => {
+        addToCart(item)
+    };
+
     return (
         <div className='pt-6 flex flex-wrap gap-6'>
             {SpkrItems.map((item) => {
@@ -47,7 +53,11 @@ function AllspkrItems() {
                             <p className='bg-slate-200 rounded-md px-1'>{item.featr2}</p>
                         </div>
                         <div className='pt-16'>
-                            <button className='bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm'>Add To Cart</button>
+                            <button key={item.id}
+                                    onClick={()=>{
+                                        handleAdd(item)}
+                                    } 
+                            className='bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm'>Add To Cart</button>
                         </div>
                     </div>
                 </div>

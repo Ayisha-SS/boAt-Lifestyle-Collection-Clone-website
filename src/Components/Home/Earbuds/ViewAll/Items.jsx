@@ -142,7 +142,8 @@ function Items() {
                   <p className="bg-slate-200 rounded-md px-1">{item.featr2}</p>
                 </div>
                 <div className="pt-16">
-                  <button className="bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm"
+                  <button key={item.id} 
+                  className="bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm"
                   onClick={() => {
                     handleAdd(item)
                   }}>

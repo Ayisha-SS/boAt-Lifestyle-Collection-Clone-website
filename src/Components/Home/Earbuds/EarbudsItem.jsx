@@ -8,9 +8,9 @@ import { Cart } from '../../Context/Context';
 function EarbudsItem({searchTerm}) {
 
     const items = earbud.earbuds
-    const {addToCart} = useContext(Cart);
     const [popup,setPopup] = useState(false)
     
+    const {addToCart} = useContext(Cart);
     const handleAdd = (item) => {
         addToCart(item)
     };

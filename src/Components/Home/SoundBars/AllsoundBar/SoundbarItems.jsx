@@ -1,7 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import SoundbarItem from "./SoundbarItems.json"
+import { Cart } from '../../../Context/Context';
 
 function SoundbarItems() {
+
+    const {addToCart} = useContext(Cart);
+    const handleAdd = (item) => {
+        addToCart(item)
+    };
+
     return (
         <div className='pt-6 flex flex-wrap gap-6'>
             {SoundbarItem.map((item) => {
@@ -47,7 +54,11 @@ function SoundbarItems() {
                             <p className='bg-slate-200 rounded-md px-1'>{item.featr2}</p>
                         </div>
                         <div className='pt-16'>
-                            <button className='bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm'>Add To Cart</button>
+                            <button key={item.id}
+                                    onClick={()=>{
+                                        handleAdd(item)}
+                                    } 
+                            className='bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm'>Add To Cart</button>
                         </div>
                     </div>
                 </div>
