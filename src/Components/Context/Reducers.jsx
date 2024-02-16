@@ -1,14 +1,6 @@
 export const initialState = {
     total:0,
     products:[],
-    // filters: {
-    //     color: '',
-    //     priceRange: { min: 0, max: 100 }, // Example price range filter
-    //     bestFor: '',
-    //     noiseCancellation: '',
-    //     features: '',
-    //     availability: ''
-    //   }
 }
 const storeReducer = (state,action) => {
     switch (action.type) {

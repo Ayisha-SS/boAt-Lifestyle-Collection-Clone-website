@@ -68,11 +68,18 @@
 // export default Items
 
 
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import ViewAll from "./ViewItem.json";
+import { Cart } from "../../../Context/Context";
 
 function Items() {
+
   const [viewAll, setViewAll] = useState(ViewAll);
+
+  const {addToCart} = useContext(Cart);
+  const handleAdd = (item) => {
+    addToCart(item)
+};
 
   return (
     <div>
@@ -135,7 +142,10 @@ function Items() {
                   <p className="bg-slate-200 rounded-md px-1">{item.featr2}</p>
                 </div>
                 <div className="pt-16">
-                  <button className="bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm">
+                  <button className="bg-black text-white py-3  w-[100%] rounded-xl tracking-[-0.4px] text-sm"
+                  onClick={() => {
+                    handleAdd(item)
+                  }}>
                     Add To Cart
                   </button>
                 </div>
