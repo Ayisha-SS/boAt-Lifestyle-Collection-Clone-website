@@ -6,7 +6,7 @@ import ViewAll from "./ViewItem.json"
 function Filter() {
   const [modal, setModal] = useState(false);
   const [colorFilter, setColorFilter] = useState('');
-  const [viewAll,setViewAll] = useState(ViewAll);
+  // const [viewAll,setViewAll] = useState(ViewAll);
 
 
   const applyFilter = () => {
@@ -88,4 +88,5 @@ const getFilter = (viewAll, colorFilter) => {
   return filteredProducts;
 };
 // export {getFilter};
-export { Filter, getFilter };
+// export { Filter, getFilter };
+export default Filter;

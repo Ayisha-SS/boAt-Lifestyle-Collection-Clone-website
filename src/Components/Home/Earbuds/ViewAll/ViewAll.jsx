@@ -28,8 +28,8 @@ function ViewAll() {
       <h2 className='pt-5 font-extrabold text-2xl tracking-wide'>Wireless Earbuds</h2>
       <div className='flex justify-between'>
         <Filter/>
-        {/* <Sort/> */}
-        <Sort handleSorting={handleSorting} viewAll={viewAll} />
+        <Sort/>
+        {/* <Sort handleSorting={handleSorting} viewAll={viewAll} /> */}
       </div>
       <Items />   
     </div>
