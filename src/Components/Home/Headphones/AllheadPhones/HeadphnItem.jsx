@@ -14,7 +14,6 @@ const filteredItems = HeadphnItems.filter((item) =>
 searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
 );
 
-    // if (searchTerm && filteredItems.length > 0) {
     return (
         <>
         <div className='pt-6 flex flex-wrap gap-6'>
@@ -73,9 +72,7 @@ searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
         </div>
         </>
       );
-    // } else {
-    //     return null;
-    // }
+    
 }
 
 export default HeadphnItem

@@ -20,7 +20,6 @@ function SpeakerItem({searchTerm}) {
 
   return (
     <>
-    {/* {searchTerm && filteredItems.length > 0 ? ( */}
     <div className='pt-5'>
         <div className="flex justify-between mb-3 ">
             <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
@@ -62,7 +61,6 @@ function SpeakerItem({searchTerm}) {
         ))}
         </div>
     </div>
-    {/* ) : null} */}
     </>
   )
 }

@@ -16,7 +16,6 @@ function Items({ searchTerm }) {
     searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
   );
 
-  // if (searchTerm && filteredItems.length > 0) {
     return (
       <>
         <div className="pt-6 flex flex-wrap gap-6">
@@ -93,9 +92,7 @@ function Items({ searchTerm }) {
         </div>
       </>
     );
-  // } else {
-  //   return null;
-  // }
+  
 }
 
 export default Items;
