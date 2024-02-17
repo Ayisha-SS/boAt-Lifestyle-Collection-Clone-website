@@ -6,19 +6,26 @@ import { Cart } from '../../Context/Context';
 
 
 
-function PhoneItem({item}) {
+function PhoneItem({searchTerm}) {
 
-  item = headphone.headphones
+  const items = headphone.headphones
 
-  const [searchedItems,setSearchedItems] = useState(headphone)
+  // const [searchedItems,setSearchedItems] = useState(headphone)
 
-  const {addToCart,dispatch} = useContext(Cart);
+  const {addToCart} = useContext(Cart);
    
   const handleAdd = (item) =>{
 	  // console.log(item,"item");
 	  addToCart(item)
   }
 
+  const filteredItems  = items.filter((item) => {
+    if(!searchTerm){
+      return true;    
+    } else {
+      return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+  });
 
   return (
     <div className='pt-5'>
@@ -31,7 +38,7 @@ function PhoneItem({item}) {
         {/* PRODUCT CARD... */}
         
 
-          {item.map((item) => {
+          {filteredItems.map((item) => {
             return (
 
 <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

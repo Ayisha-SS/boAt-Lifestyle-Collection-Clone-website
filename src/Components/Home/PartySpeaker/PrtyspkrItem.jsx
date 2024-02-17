@@ -5,17 +5,24 @@ import {Link } from "react-router-dom"
 import { Cart } from '../../Context/Context';
 
 
-function PrtyspkrItem({item}) {
+function PrtyspkrItem({searchTerm}) {
 
-  item = prtySpkr.partySpeakers
-  const [searchedItems,setSearchedItems] = useState(prtySpkr)
+  const items = prtySpkr.partySpeakers
+  // const [searchedItems,setSearchedItems] = useState(prtySpkr)
 
-  const {addToCart,dispatch} = useContext(Cart);
+  const {addToCart} = useContext(Cart);
    
     const handleAdd = (item) =>{
-        // console.log(item,"item");
         addToCart(item)
     }
+
+    const filteredItems  = items.filter((item) => {
+      if(!searchTerm){
+        return true;    
+      } else {
+        return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+      }
+    });
 
   return (
     <div className='pt-5'>
@@ -28,7 +35,7 @@ function PrtyspkrItem({item}) {
  {/* PRODUCT CARD... */}
         
         
-      {item.map((item) => {
+      {filteredItems.map((item) => {
         return (
 
 <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

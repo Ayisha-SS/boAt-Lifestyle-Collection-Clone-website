@@ -22,7 +22,7 @@ function EarbudsItem({searchTerm}) {
         document.body.classList.remove("overflow-y-hidden")
     }
  
-    const filterProducts  = items.filter((item) => {
+    const filteredItems  = items.filter((item) => {
         if(!searchTerm){
             return true;    
         } else {
@@ -40,7 +40,7 @@ function EarbudsItem({searchTerm}) {
         <div className="flex gap-4">
 
 {/* PRODUCT CARD... */}
-            {filterProducts
+            {filteredItems
             .map((item)=> 
                  (
                     <div key={item.id} className='w-[25%] flex flex-col relative rounded-2xl shadow-3xl'>
@@ -64,10 +64,7 @@ function EarbudsItem({searchTerm}) {
                                 </div>
                             </div>
                             <div className="">
-                                {/* <button key={item.id}
-                                    onClick={() =>setPopup(true)} 
-                                className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button> */}
-                            
+                                
                                 <button key={item.id}
                                     onClick={()=>{
                                         handleAdd(item)}

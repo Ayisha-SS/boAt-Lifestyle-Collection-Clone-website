@@ -1,20 +1,26 @@
 import React,{useState,useContext} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-// import items from "./Neckbar.json";
 import neckband from "../Home.json"
 import {Link} from "react-router-dom"
 import { Cart } from '../../Context/Context';
 
-function NeckItem({item}) {
+function NeckItem({searchTerm}) {
 
-  item = neckband.neckbands
-  const [searchedItems,setSearchedItems] = useState(neckband)
+  const items = neckband.neckbands
+  // const [searchedItems,setSearchedItems] = useState(neckband)
 
-  const {addToCart,dispatch} = useContext(Cart);
+  const {addToCart} = useContext(Cart);
   const handleAdd = (item) =>{
-	// console.log(item,"item");
 	addToCart(item)
 }
+
+const filteredItems  = items.filter((item) => {
+	if(!searchTerm){
+		return true;    
+	} else {
+		return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+	}
+});
 
   return (
     <div className='pt-5'>
@@ -27,7 +33,7 @@ function NeckItem({item}) {
   {/* PRODUCT CARD... */}
         
 
- {item.map((item) => {
+ {filteredItems.map((item) => {
 
   return(
 

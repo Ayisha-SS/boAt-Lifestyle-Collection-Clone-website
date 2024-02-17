@@ -10,6 +10,19 @@ import Log from '../SignIn/Log';
 import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CollectionsdrpDown from './CollectionsdrpDown';
 import { Cart } from '../Context/Context';
+import Items from '../Home/Earbuds/ViewAll/Items';
+import WatchItem from '../Home/Watches/WatchItem';
+import AllItem from '../Home/Watches/AllWatch/AllItem';
+import NeckItem from '../Home/Neckbands/NeckItem';
+import BandsItem from '../Home/Neckbands/AllBands/BandsItem';
+import PhoneItem from '../Home/Headphones/PhoneItem';
+import HeadphnItem from '../Home/Headphones/AllheadPhones/HeadphnItem';
+import SpeakerItem from '../Home/Speaker/SpeakerItem';
+import AllspkrItems from '../Home/Speaker/AllSpeaker/AllspkrItems';
+import PrtyspkrItem from '../Home/PartySpeaker/PrtyspkrItem';
+import AllprtyItem from '../Home/PartySpeaker/AllprtySpkr/AllprtyItem';
+import SoundbarItem from '../Home/SoundBars/SoundbarItem';
+import SoundbarItems from '../Home/SoundBars/AllsoundBar/SoundbarItems';
 
 function NavBar() {
   const [showPopUp,setShowpopup] = useState(false);
@@ -57,8 +70,22 @@ function NavBar() {
     </div>
     {showPopUp && <Log close={setShowpopup}/>}
       {cart && <AddtoCart remove={setCart}/>}
-      {searchTerm && <EarbudsItem searchTerm={searchTerm} setTerm={setSearchTerm}/>}
-    
+      {searchTerm && <>
+        <EarbudsItem searchTerm={searchTerm} setTerm={setSearchTerm}/>
+        <Items searchTerm={searchTerm} setTerm={setSearchTerm}/> 
+        <WatchItem searchTerm={searchTerm} />
+        <AllItem searchTerm={searchTerm} />
+        <NeckItem searchTerm={searchTerm} />
+        <BandsItem searchTerm={searchTerm} />
+        <PhoneItem searchTerm={searchTerm}/>
+        <HeadphnItem searchTerm={searchTerm} />
+        <SpeakerItem searchTerm={searchTerm} />
+        <AllspkrItems searchTerm={searchTerm} />
+        <PrtyspkrItem searchTerm={searchTerm}/>
+        <AllprtyItem searchTerm={searchTerm}/>
+        <SoundbarItem searchTerm={searchTerm} />
+        <SoundbarItems searchTerm={searchTerm} />
+      </>}
     </>
   )
 }

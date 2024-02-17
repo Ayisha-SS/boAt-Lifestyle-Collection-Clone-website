@@ -1,16 +1,22 @@
 import React, {useContext} from 'react'
 import SpkrItems from "./AllspkrItems.json"
+import { Cart } from '../../../Context/Context';
 
-function AllspkrItems() {
+function AllspkrItems({searchTerm}) {
 
     const {addToCart} = useContext(Cart);
     const handleAdd = (item) => {
         addToCart(item)
     };
 
+    // Filter items based on search term
+const filteredItems = SpkrItems.filter((item) =>
+searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+);
+
     return (
         <div className='pt-6 flex flex-wrap gap-6'>
-            {SpkrItems.map((item) => {
+            {filteredItems.map((item) => {
                 return (
     <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
                 <div className='w-[40%] mb-2 relative'>

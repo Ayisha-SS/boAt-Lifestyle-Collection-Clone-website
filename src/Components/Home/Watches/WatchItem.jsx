@@ -10,7 +10,6 @@ function WatchItem({searchTerm}) {
   const items = watch.watches
 
   const [popup,setPopup] = useState(false)   //popup
-//   const [searchedItems,setSearchedItems] = useState(watch)
 
   const {addToCart} = useContext(Cart);
 
@@ -25,12 +24,12 @@ if(popup) {
     document.body.classList.remove("overflow-y-hidden")
 }
 
-const filterProducts  = items.filter((item) => {
-    if(!searchTerm){
-        return true;    
-    } else {
-        return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-    }
+const filteredItems  = items.filter((item) => {
+	if(!searchTerm){
+		return true;    
+	} else {
+		return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+	}
 });
 
   return (
@@ -44,7 +43,7 @@ const filterProducts  = items.filter((item) => {
         <div className="flex gap-4 ">
         
 {/* PRODUCT CARD... */}
-        {filterProducts
+        {filteredItems
         	.map((item) => 
              (
               	<div key={item.id} className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>

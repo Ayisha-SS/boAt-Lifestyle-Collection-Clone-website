@@ -4,16 +4,21 @@ import Footer from '../../Footer/Footer';
 import { Cart } from '../../../Context/Context';
 
 
-function AllItem() {
+function AllItem({searchTerm}) {
 
     const {addToCart} = useContext(Cart);
     const handleAdd = (item) => {
         addToCart(item)
     };
 
+    // Filter items based on search term
+const filteredItems = AllItems.filter((item) =>
+searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+);
+
     return (
         <div className='pt-6 flex flex-wrap gap-6'>
-            {AllItems.map((item) => {
+            {filteredItems.map((item) => {
                 return (
     <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
                 <div className='w-[40%] mb-2 relative'>
