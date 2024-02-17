@@ -24,25 +24,21 @@ if(popup) {
     document.body.classList.remove("overflow-y-hidden")
 }
 
-const filteredItems  = items.filter((item) => {
-	if(!searchTerm){
-		return true;    
-	} else {
-		return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-	}
-});
+const filteredItems = items.filter((item) =>
+    searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+  );
 
   return (
     <>
-      
-    <div className='pt-5'>
+      {/* {searchTerm && filteredItems.length > 0 ? ( */}
+    	<div className='pt-5'>
         <div className="flex justify-between mb-3 ">
           <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
           <Link to="smart-watch" className='text-xs font-bold flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
-        <div className="flex gap-4 ">
-        
+        <div className="flex gap-4 ">    
 {/* PRODUCT CARD... */}
+
         {filteredItems
         	.map((item) => 
              (
@@ -81,6 +77,7 @@ const filteredItems  = items.filter((item) => {
             	))}
         </div>
     </div>
+	{/* ) : null} */}
 		{popup && <PopUp close={setPopup}/>}
     </>
   )

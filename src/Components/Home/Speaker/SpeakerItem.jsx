@@ -1,11 +1,8 @@
 import React,{useState,useContext} from 'react'
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-// import items from "./Speaker.json"
 import speaker from "../Home.json"
 import {Link} from "react-router-dom"
 import { Cart } from '../../Context/Context';
-
-
 
 function SpeakerItem({searchTerm}) {
 
@@ -17,29 +14,23 @@ function SpeakerItem({searchTerm}) {
         addToCart(item)
     }
 
-    const filteredItems  = items.filter((item) => {
-        if(!searchTerm){
-            return true;    
-        } else {
-            return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-        }
-    });
+    const filteredItems = items.filter((item) =>
+    searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+  );
 
   return (
+    <>
+    {/* {searchTerm && filteredItems.length > 0 ? ( */}
     <div className='pt-5'>
         <div className="flex justify-between mb-3 ">
             <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
             <Link to="wireless-speaker" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16}/></Link>
         </div>
-
         <div className="flex gap-4 ">
 {/* PRODUCT CARD... */}
             
-
-    {filteredItems.map((item) => {
-        return (
-
-        <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>
+    {filteredItems.map((item) => (
+    <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>
                 <div>
                     <span className='absolute text-[10px] tracking-wide font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1'>{item.status}</span>
                     <span className='absolute justify-center  bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight'>{item.hours}</span>
@@ -68,12 +59,11 @@ function SpeakerItem({searchTerm}) {
                     </div>
                 </div>
             </div>
-        )
-    })}
-
-
+        ))}
         </div>
     </div>
+    {/* ) : null} */}
+    </>
   )
 }
 

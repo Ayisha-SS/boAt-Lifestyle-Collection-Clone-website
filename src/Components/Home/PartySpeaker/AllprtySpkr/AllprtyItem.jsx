@@ -14,11 +14,13 @@ const filteredItems = AllItems.filter((item) =>
 searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
 );
 
+// if (searchTerm && filteredItems.length > 0) {
     return (
+        <>
         <div className='pt-6 flex flex-wrap gap-6'>
-            {filteredItems.map((item) => {
-                return (
-    <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
+            {filteredItems.map((item) => (
+            <div key={item.id} 
+                className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
                 <div className='w-[40%] mb-2 relative'>
                     <img src={item.image} alt={item.name} className='w-[100%] rounded-lg'/>
                 </div>
@@ -68,11 +70,13 @@ searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
                     </div>
                 </div>
             </div>
-                )
-            })}
-            
+        ))}    
         </div>
-      )
+        </>
+      );
+    // } else {
+    //     return null;
+    // }
 }
 
 export default AllprtyItem

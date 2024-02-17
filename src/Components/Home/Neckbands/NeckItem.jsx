@@ -14,15 +14,13 @@ function NeckItem({searchTerm}) {
 	addToCart(item)
 }
 
-const filteredItems  = items.filter((item) => {
-	if(!searchTerm){
-		return true;    
-	} else {
-		return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-	}
-});
+const filteredItems = items.filter((item) =>
+    searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+  );
 
   return (
+    <>
+    {/* {searchTerm && filteredItems.length > 0 ? ( */}
     <div className='pt-5'>
       <div className="flex justify-between mb-3 ">
         <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
@@ -33,9 +31,7 @@ const filteredItems  = items.filter((item) => {
   {/* PRODUCT CARD... */}
         
 
- {filteredItems.map((item) => {
-
-  return(
+ {filteredItems.map((item) => (
 
       <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>
           <div>
@@ -67,12 +63,11 @@ const filteredItems  = items.filter((item) => {
             </div>
           </div>
         </div>
-  )
- })}
-  
+  ))}
       </div>
-
     </div>
+    {/* ): null} */}
+    </>
   )
 }
 

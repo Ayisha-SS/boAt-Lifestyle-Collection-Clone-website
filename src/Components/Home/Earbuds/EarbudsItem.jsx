@@ -28,7 +28,7 @@ function EarbudsItem({searchTerm}) {
 
   return (
     <>
-     {searchTerm && filteredItems.length > 0 ? (
+     {/* {searchTerm && filteredItems.length > 0 ? ( */}
         <div className="pt-5">
           <div className="flex justify-between mb-3 ">
             <h3 className="text-3xl">
@@ -78,7 +78,7 @@ function EarbudsItem({searchTerm}) {
             ))}
           </div>
         </div>
-      ) : null}
+      {/* ) : null} */}
       {popup && <PopUp close={setPopup} />}
     </>
   )

@@ -4,8 +4,6 @@ import headphone from "../Home.json"
 import { Link } from "react-router-dom"
 import { Cart } from '../../Context/Context';
 
-
-
 function PhoneItem({ searchTerm }) {
 
   const items = headphone.headphones
@@ -22,17 +20,16 @@ function PhoneItem({ searchTerm }) {
 
   return (
     <>
-      {searchTerm && filteredItems.length > 0 ? (
+      {/* {searchTerm && filteredItems.length > 0 ? ( */}
         <div className='pt-5'>
           <div className="flex justify-between mb-3 ">
             <h3 className='text-3xl'>Best <span className='font-bold'>Sellers</span></h3>
             <Link to="headphones" className='text-xs flex text-blue-800'>View All <IoArrowForwardCircleOutline size={16} /></Link>
           </div>
           <div className="flex gap-4 ">
-            {/* PRODUCT CARD... */}
+  {/* PRODUCT CARD... */}
 
             {filteredItems.map((item) => (
-
               <div className='outline-none w-[25%] flex flex-col relative rounded-2xl shadow-xl'>
                 <div>
                   <span className='absolute text-[10px] tracking-wide font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1'>{item.status}</span>
@@ -57,8 +54,7 @@ function PhoneItem({ searchTerm }) {
                     <button key={item.id}
                       onClick={() => {
                         handleAdd(item)
-                      }
-                      }
+                      }}
                       className='px-32 whitespace-nowrap	py-2 bg-black text-sm text-white rounded-lg'>Add To Cart</button>
                   </div>
                 </div>
@@ -66,7 +62,7 @@ function PhoneItem({ searchTerm }) {
             ))}
           </div>
         </div>
-      ) : null}
+      {/* ) : null} */}
     </>
   )
 }
