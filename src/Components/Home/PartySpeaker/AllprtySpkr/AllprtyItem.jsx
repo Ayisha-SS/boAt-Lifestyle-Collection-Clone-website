@@ -20,7 +20,7 @@ searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
                 return (
     <div className=' relative border w-[32%] rounded-xl bg-[#fafafa] flex p-1'>
                 <div className='w-[40%] mb-2 relative'>
-                    <img src="src\assets\images\wirless-spkr\box-5_100x.png" alt="Airpode-131" className='w-[100%] rounded-lg'/>
+                    <img src={item.image} alt={item.name} className='w-[100%] rounded-lg'/>
                 </div>
                 <div>
                     <span className='absolute left-1 text-[10px] top-5 bg-black text-white tracking-wide font-bold z-[1] rounded-r-lg p-1'>{item.status}</span>
@@ -48,7 +48,7 @@ searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
                     </div>
                     <h4 className='font-bold text-base mt-1'>{item.name}</h4>
                     <div className='flex gap-1 pt-1 pb-2'>
-                        <p className='font-bold text-sm'>&#8377;{item.offrprice}</p>
+                        <p className='font-bold text-sm'>&#8377;{item.price}</p>
                         <p className='font-medium text-xs text-slate-400 line-through'>&#8377;{item.orgnlprce}</p>
                         <p className='font-medium text-xs'>{item.offer}</p>
                     </div>

@@ -50,7 +50,7 @@ searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
                     </div>
                     <h4 className='font-bold text-base mt-1'>{item.name}</h4>
                     <div className='flex gap-1 pt-1 pb-2'>
-                        <p className='font-bold text-sm'>&#8377;{item.offrprice}</p>
+                        <p className='font-bold text-sm'>&#8377;{item.price}</p>
                         <p className='font-medium text-xs text-slate-400 line-through'>&#8377;{item.orgnlprce}</p>
                         <p className='font-medium text-xs'>{item.offer}</p>
                     </div>
