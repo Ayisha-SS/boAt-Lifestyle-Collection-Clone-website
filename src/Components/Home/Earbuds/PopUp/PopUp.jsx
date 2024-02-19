@@ -13,7 +13,7 @@ function PopUp({close,item}) {
   return (
     <>
     <div className='p-10 bg-[#313131cc] w-[100%] h-[100vh] fixed top-0 bottom-0 right-0 left-0 z-10'>
-        <div className='flex gap-5 bg-[#ffffff] w-[50%] p-5 rounded-[10px]  fixed top-[44%] left-[50%] translate-x-[-40%] translate-y-[-50%] '>
+        <div className='flex gap-5 bg-[#ffffff] w-[50%] p-5 rounded-[10px]  fixed top-[44%] left-[50%] translate-x-[-40%] translate-y-[-50%]'>
             <div className='w-[35%] '>
                 <div className='w-[80%]'>
                     <img src="src\assets\images\airpodes\popup1.png" alt="Airdopes-131" className='w-[100%] rounded-lg' />

@@ -43,7 +43,7 @@ function EarbudsItem({searchTerm}) {
             {filteredItems.map((item) => (
               <div key={item.id} className="w-[25%] flex flex-col relative rounded-2xl shadow-3xl">
                 <div>
-                  <span className="absolute text-[10px] font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1 tracking-wide">{item.status}</span>
+                  <span className="absolute text-[10px] font-bold z-[1] left-0 top-2.5 rounded-r bg-black text-white p-1 tracking-wide">{item.status}</span>
                   <span className="absolute justify-center bottom-36 z-[1] left-[15%] text-center border-1 border-solid border-black rounded-2xl py-1.5 w-[70%] text-xs font-bold bg-yellow-500 text-black tracking-tight">{item.hours}</span>
                 </div>
                 <div className="h-80 w-[100%] rounded-t-3x ">

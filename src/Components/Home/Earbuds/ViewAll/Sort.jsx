@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react'
 import { BiSortAlt2 } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+
 function Sort() {
     const [ViewAll,setViewAll] = useState([]);
     const [sortBy,setSortBy] = useState("sort");
@@ -21,12 +21,13 @@ function Sort() {
       });
       setViewAll(sortedProducts)
     };
+
   return (
     <div className='pt-5'>
       <form action="#">
         <label htmlFor="sort"></label>
-        <select name="sort" id="sort" className='relative flex text-lg font-bold  border-black px-4 py-2 rounded-md bg-[#eff4f7]' onChange={handleSortChange}>
-          <option value="a-z" >Alphabetically,A-Z</option>
+        <select name="sort" id="sort" className='relative flex text-lg font-bold border-black px-4 py-2 rounded-md bg-[#eff4f7]' onChange={handleSortChange}>
+          <option value="a-z">Alphabetically,A-Z</option>
           <option value="" disabled></option>
           <option value="z-a">Alphabetically,Z-A</option>
           <option value="" disabled></option>
@@ -39,7 +40,7 @@ function Sort() {
     </div>
   )
 }
-export default Sort
+export default Sort;
 
 
 // import React from 'react';

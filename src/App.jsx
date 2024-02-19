@@ -45,6 +45,7 @@ function App() {
 			</Routes>
 		</BrowserRouter>
 
+
 		{/* <BrowserRouter>
 			<Routes>
 				<Route
@@ -76,9 +77,7 @@ function App() {
 
       </Context>
 	  
-      <Chatbot/>
-	  
-	  
+      <Chatbot/>    
     </>
   )
 }

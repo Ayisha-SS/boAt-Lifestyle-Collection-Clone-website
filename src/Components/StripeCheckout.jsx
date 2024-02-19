@@ -4,7 +4,7 @@ import StripeCheckout from 'react-stripe-checkout';
 const StripeCheckoutButton = ({price , removeFromCart}) => {
   const publishableKey = 'pk_test_51OSB2ISH2GrVPvS1OyY1v0XbSyOIodjNpFpekgQ4CUjCXpDYIncpONrACmwTag3EoYdrr3NPtWiS37WXOvKO7CJf00bYX1LLrh';
 
-  const onToken =(token) => {
+  const onToken = (token) => {
     console.log(token);
     removeFromCart();
   };

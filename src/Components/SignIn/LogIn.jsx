@@ -4,15 +4,12 @@ import { BASE_URL } from "../../axiosConfig"
 import { useNavigate } from 'react-router-dom';
 import { Cart } from '../Context/Context';
 
-
 function LogIn() {
-
 	// const [email, setEmail] = useState("");
 	const [username,setuserName] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
 	const { updateUserData } = useContext(Cart);
-
 	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
@@ -51,7 +48,7 @@ function LogIn() {
 						setMessage ("Invalid username or password");
 					}
 				} else {
-					setMessage("An error occurred. Please try again later.");
+					setMessage("An error occurred.Please try again later.");
 				}
 			});
 	};

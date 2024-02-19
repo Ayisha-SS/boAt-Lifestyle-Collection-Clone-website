@@ -63,8 +63,8 @@ function SignUp({ remove }) {
             <div className='mt-[80px] flex flex-col pt-4 pb-7 bg-[#fafafa] max-w-[580px] w-[50%] rounded absolute right-60'>
                 <div className='my-4 flex justify-center'>
                     <h4 className='text-2xl tracking-wider'>Get <strong>started</strong></h4>
-                    <span className='text-[20px] flex justify-center items-center w-7 h-7 bg-[#d0d9de33]  right-5 top-3 absolute rounded-[50%] cursor-pointer
-                ' onClick={() => remove(false)}>&times;</span>
+                    <span className='text-[20px] flex justify-center items-center w-7 h-7 bg-[#d0d9de33]  right-5 top-3 absolute rounded-[50%] cursor-pointer'
+                 onClick={() => remove(false)}>&times;</span>
                 </div>
                 <form onSubmit={handleSubmit} className='flex flex-col mx-10'>
                     <div className='mb-[10px]  '>

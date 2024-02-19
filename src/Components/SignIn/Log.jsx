@@ -26,8 +26,7 @@ function Log({ close }) {
             <span className='font-bold text-lg cursor-pointer' onClick={()=>close(false)}>&times;</span>
         </div>
         <div className='mt-2 items-center'>
-            {/* <button className='w-[100%] text-lg rounded-lg items-center bg-black text-white' onClick={() => setLogin(true)}>Sign Up</button> */}
-		
+            {/* <button className='w-[100%] text-lg rounded-lg items-center bg-black text-white' onClick={() => setLogin(true)}>Sign Up</button> */}		
           {userData ? (
             <button className='w-[100%] text-lg rounded-lg items-center bg-black text-white' onClick={handleLogout}>Log Out</button>
           ) : (
@@ -37,7 +36,7 @@ function Log({ close }) {
         {login && <SignUp remove={setLogin}/>} 
         {/* {showPopup && <SignUp remove={setShowPopup}/>} */}
     </div>
-  )
+  );
 }
 
 export default Log
