@@ -22,9 +22,9 @@ function EarbudsItem({searchTerm}) {
         document.body.classList.remove("overflow-y-hidden")
     }
  
-  //   const filteredItems = items.filter((item) =>
-  //   searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
-  // );
+    const filteredItems = items.filter((item) =>
+    searchTerm ? item.name.toLowerCase().includes(searchTerm.toLowerCase()) : true
+  );
 
   return (
     <>
@@ -40,7 +40,7 @@ function EarbudsItem({searchTerm}) {
           <div className="flex gap-4">
 {/*  PRODUCT CARD... */}
 
-            {items.map((item) => (
+            {filteredItems.map((item) => (
               <div key={item.id} className="w-[25%] flex flex-col relative rounded-2xl shadow-3xl">
                 <div>
                   <span className="absolute text-[10px] font-bold z-[1] left-0 top-2.5 rounded-r-lg bg-black text-white p-1 tracking-wide">{item.status}</span>

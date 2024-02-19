@@ -59,7 +59,7 @@ function NavBar() {
       } else if (searchTerm === 'soundbar') {
         path = '/soundbar';
       } else {
-        path = `/${path}/query=${searchTerm}`
+        path = `${path}/query=${searchTerm}`
       }
       navigate(path);
     }

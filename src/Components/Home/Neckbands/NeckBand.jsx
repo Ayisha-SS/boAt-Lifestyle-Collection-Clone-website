@@ -4,7 +4,7 @@ import NeckItem from './NeckItem'
 
 function NeckBand() {
   return (
-    <div className='bg-gradient-to-b from-white to-[#f2edff] container pb-2'>
+    <div className='bg-gradient-to-b from-white to-[#f2edff] container pb-5'>
         <NeckHead/>
         <NeckItem/>
     </div>

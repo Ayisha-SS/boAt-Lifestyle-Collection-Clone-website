@@ -4,7 +4,7 @@ import PhoneItem from './PhoneItem'
 
 function Headphone() {
   return (
-    <div className='bg-gradient-to-b from-[#ffffff] to-[#dfeeeb] container pb-2'>
+    <div className='bg-gradient-to-b from-[#ffffff] to-[#dfeeeb] container pb-5'>
         <PhoneHead/>
         <PhoneItem/>
     </div>

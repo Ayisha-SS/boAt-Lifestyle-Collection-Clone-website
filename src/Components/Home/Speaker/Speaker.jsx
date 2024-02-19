@@ -4,7 +4,7 @@ import SpeakerItem from './SpeakerItem'
 
 function Speaker() {
   return (
-    <div className='bg-gradient-to-b from-[#ffffff] to-[#e6ecff] container pb-2'>
+    <div className='bg-gradient-to-b from-[#ffffff] to-[#e6ecff] container pb-5'>
         <SpeakerHead/>
         <SpeakerItem/>
     </div>

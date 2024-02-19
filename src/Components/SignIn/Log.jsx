@@ -1,12 +1,20 @@
-import React, { useState,useContext} from 'react'
+import React, { useState,useContext,useEffect } from 'react'
 import {Link} from "react-router-dom"
 import SignUp from './SignUp'
 import { Cart } from '../Context/Context'
 
-function Log({close}) {
+function Log({ close }) {
 	const {userData,updateUserData} = useContext(Cart);
-  const [login,setLogin] = useState(false)
+  const [login,setLogin] = useState(false);
+  // const [showPopup, setShowPopup] = useState(true);
   
+
+//   useEffect(() => {
+//     // Set showPopup to true when the component mounts
+//     setLogin(true);
+//     setShowPopup(true);
+// }, []);
+
 	const handleLogout = () => {
 		updateUserData({ type: "LOGOUT"});
 	};
@@ -27,6 +35,7 @@ function Log({close}) {
           )}
 			  </div>
         {login && <SignUp remove={setLogin}/>} 
+        {/* {showPopup && <SignUp remove={setShowPopup}/>} */}
     </div>
   )
 }

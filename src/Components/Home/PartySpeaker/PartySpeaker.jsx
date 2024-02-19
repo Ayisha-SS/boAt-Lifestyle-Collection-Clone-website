@@ -4,7 +4,7 @@ import PrtyspkrItem from './PrtyspkrItem'
 
 function PartySpeaker() {
   return (
-    <div className='bg-gradient-to-b from-[#ffffff] to-[#eddfcb] container pb-2'>
+    <div className='bg-gradient-to-b from-[#ffffff] to-[#eddfcb] container pb-5'>
         <PrtyspkrHead/>
         <PrtyspkrItem/>
     </div>

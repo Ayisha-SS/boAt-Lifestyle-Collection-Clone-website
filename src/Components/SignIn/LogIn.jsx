@@ -7,18 +7,18 @@ import { Cart } from '../Context/Context';
 
 function LogIn() {
 
-	const [email, setEmail] = useState("");
+	// const [email, setEmail] = useState("");
+	const [username,setuserName] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
-
-	const { updateUserData } = useContext(Cart)
+	const { updateUserData } = useContext(Cart);
 
 	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (!email || !password) {
+		if (!username || !password) {
 			setMessage("Please fill out all fields");
 			return;
 		}
@@ -31,7 +31,7 @@ function LogIn() {
 
 		axios
 			.post(`${BASE_URL}/auth/token/`, {
-				email,
+				username,
 				password
 			})
 			.then((response) => {
@@ -43,15 +43,15 @@ function LogIn() {
 			.catch((error) => {
 				console.error(error.response.status);
 				if (error.response.status === 401) {
-					if (error.response.data.email) {
-						setMessage ("Invalid email");
+					if (error.response.data.username) {
+						setMessage ("Invalid username");
 					} else if (error.response.password) {
-						setMessage ("Invalid password")
+						setMessage ("Invalid password");
 					} else {
-						setMessage ("Invalid email or password");
+						setMessage ("Invalid username or password");
 					}
 				} else {
-					setMessage("An error occurred. Please try aganin later.");
+					setMessage("An error occurred. Please try again later.");
 				}
 			});
 	};
@@ -62,23 +62,22 @@ function LogIn() {
 				<div className='my-4 flex justify-center'>
 					<h3 className='text-2xl tracking-wider'>LogIn</h3>
 				</div>
-
 				<form onSubmit={handleSubmit} className='flex flex-col mx-10 justify-center items-center'>
-					
 					<input className='p-3 w-[70%] text-lg bg-slate-200 rounded-xl mb-5'
-						type="email"
-						value={email}
-						placeholder='Email'
-						onChange={(e) => setEmail(e.target.value)}
+						type = "email"
+						value = {username}
+						placeholder = "Email"
+						onChange = {(e) => setuserName(e.target.value)}
 					/>
 					<input className='p-3 w-[70%] text-lg bg-slate-200 rounded-xl mb-5'
-						type="password"
-						value={password}
-						placeholder='Password'
-						onChange={(e) => setPassword(e.target.value)} />
+						type = "password"
+						value = {password}
+						placeholder = "Password"
+						onChange = {(e) => setPassword(e.target.value)} 
+					/>
 					{message && <p className='text-sm text-red-600 text-center'>{message}</p>}
 					<div className='flex items-center justify-center'>
-						{ email && password ? (
+						{ username && password ? (
 							<button type='submit'>Log In</button>
 						) : (
 							<button type='submit' disabled>Log In</button>

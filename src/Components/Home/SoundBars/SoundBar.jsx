@@ -4,7 +4,7 @@ import SoundbarItem from './SoundbarItem'
 
 function SoundBar() {
   return (
-    <div className='bg-gradient-to-b from-[#ffffff] to-[#f3e5e5] container pb-2'>
+    <div className='bg-gradient-to-b from-[#ffffff] to-[#f3e5e5] container pb-5'>
         <SoundbarHead/>
         <SoundbarItem/>
     </div>

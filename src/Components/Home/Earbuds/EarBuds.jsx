@@ -4,10 +4,9 @@ import EarbudsItem from './EarbudsItem'
 
 function EarBuds() {
   return (
-    <div className='bg-gradient-to-b from-[#edfefe] to-[#eeffff] container pb-2'>
+    <div className='bg-gradient-to-b from-[#edfefe] to-[#eeffff] container pb-5'>
         <EarbudsHead/>
-        <EarbudsItem/>
-        
+        <EarbudsItem/>    
     </div>
   )
 }
