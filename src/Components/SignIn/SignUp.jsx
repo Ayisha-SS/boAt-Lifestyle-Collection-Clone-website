@@ -52,7 +52,7 @@ function SignUp({ remove }) {
             })
             .catch((error) => {
                 console.log(error.response);
-                if (error.response.status == 401) {
+                if (error.response.status === 401) {
                     setMessage(error.response.data.detail);
                 }
             });
@@ -82,13 +82,14 @@ function SignUp({ remove }) {
                     <Link to="/login" className='flex justify-end mt-1 text-red-600'>LogIn</Link>
                     {message && <p className='text-sm text-red-600 text-center'>{message}</p>}
                     <div className='flex items-center justify-center'>
-                        {name && email && password ? (
+                        {/* {name && email && password ? (
                             <Link to="/login">
                                 <button type='submit'>Sign Up</button>
                             </Link>
                         ) : (
                             <button type='submit' disabled>Sign Up</button>
-                        )}
+                        )} */}
+                        <button type='submit'>Sign Up</button>
                     </div>
                 </form>
             </div>
@@ -96,3 +97,4 @@ function SignUp({ remove }) {
     );
 }
 export default SignUp;
+

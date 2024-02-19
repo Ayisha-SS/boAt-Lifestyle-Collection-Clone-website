@@ -7,7 +7,7 @@ import { Cart } from '../Context/Context';
 
 function LogIn() {
 
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
 
@@ -18,20 +18,20 @@ function LogIn() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (!username || !password) {
+		if (!email || !password) {
 			setMessage("Please fill out all fields");
 			return;
 		}
-		const userData = JSON.parse(localStorage.getItem("user_data"));
+		// const userData = JSON.parse(localStorage.getItem("user_data"));
 
-		if (!userData) {
-			setMessage("No user data found. Please sign up first.");
-			return;
-		}
+		// if (!userData) {
+		// 	setMessage("No user data found. Please sign up first.");
+		// 	return;
+		// }
 
 		axios
 			.post(`${BASE_URL}/auth/token/`, {
-				username,
+				email,
 				password
 			})
 			.then((response) => {
@@ -43,7 +43,15 @@ function LogIn() {
 			.catch((error) => {
 				console.error(error.response.status);
 				if (error.response.status === 401) {
-					setMessage(error.response.data.detail);
+					if (error.response.data.email) {
+						setMessage ("Invalid email");
+					} else if (error.response.password) {
+						setMessage ("Invalid password")
+					} else {
+						setMessage ("Invalid email or password");
+					}
+				} else {
+					setMessage("An error occurred. Please try aganin later.");
 				}
 			});
 	};
@@ -56,22 +64,21 @@ function LogIn() {
 				</div>
 
 				<form onSubmit={handleSubmit} className='flex flex-col mx-10 justify-center items-center'>
+					
 					<input className='p-3 w-[70%] text-lg bg-slate-200 rounded-xl mb-5'
 						type="email"
-						value={username}
+						value={email}
 						placeholder='Email'
-						onChange={(e) => setUsername(e.target.value)}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<input className='p-3 w-[70%] text-lg bg-slate-200 rounded-xl mb-5'
 						type="password"
 						value={password}
 						placeholder='Password'
 						onChange={(e) => setPassword(e.target.value)} />
-
 					{message && <p className='text-sm text-red-600 text-center'>{message}</p>}
 					<div className='flex items-center justify-center'>
-
-						{username && password ? (
+						{ email && password ? (
 							<button type='submit'>Log In</button>
 						) : (
 							<button type='submit' disabled>Log In</button>
@@ -84,3 +91,4 @@ function LogIn() {
 }
 
 export default LogIn
+

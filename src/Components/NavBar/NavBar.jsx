@@ -1,5 +1,5 @@
 import React, { useState,useContext,useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleDown,FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import companyLogo from '../../assets/images/boat.jpeg';
@@ -7,9 +7,9 @@ import { IoIosSearch,IoIosClose } from "react-icons/io";
 import NavDropdown from './NavDropdown';
 import AddtoCart from '../CartPage/AddtoCart';
 import Log from '../SignIn/Log';
-import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import CollectionsdrpDown from './CollectionsdrpDown';
 import { Cart } from '../Context/Context';
+import EarbudsItem from '../Home/Earbuds/EarbudsItem';
 import Items from '../Home/Earbuds/ViewAll/Items';
 import WatchItem from '../Home/Watches/WatchItem';
 import AllItem from '../Home/Watches/AllWatch/AllItem';
@@ -30,6 +30,8 @@ function NavBar() {
   const {products} = useContext(Cart);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = 'hidden'; 
@@ -37,6 +39,31 @@ function NavBar() {
       document.body.style.overflow = ''; 
     }
   }, [cart]);
+
+  const handleSearch = () => {
+    if (searchTerm.trim() !== "") {
+      // navigate(`/wireless-earbuds?query=${searchTerm}`);
+      let path;
+      if (searchTerm === "wirelsee-earbuds") {
+        path = '/wireless-earbuds';
+      } else if (searchTerm === 'smart-watch') {
+        path = '/smart-watch';
+      } else if (searchTerm === 'neckbands') {
+        path = '/neckbands';
+      } else if (searchTerm === 'headphones') {
+        path = '/headphones';
+      } else if (searchTerm === 'wireless-speaker') {
+        path = '/wireless-speaker';
+      } else if (searchTerm === 'party-speaker') {
+        path = '/party-speaker';
+      } else if (searchTerm === 'soundbar') {
+        path = '/soundbar';
+      } else {
+        path = `/${path}/query=${searchTerm}`
+      }
+      navigate(path);
+    }
+  };
 
   return (
     <>
@@ -54,38 +81,43 @@ function NavBar() {
 </Link>
       </nav>
       <div className='flex items-center ml-52 gap-3'>
-      <div className='px-2 ml-4 relative rounded-3xl pl-2  py-2  flex bg-slate-100 gap-1'>
-        <IoIosSearch size={25} className='box-content '/><input type="text" placeholder='search' value={searchTerm} className='bg-transparent focus:outline-none' 
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-      }}/>
-        <IoIosClose className='p-1 box-content bg-white rounded-full' onClick={() =>setSearchTerm("")}/>
-      </div>      
-      <div className='flex gap-2 '>
-      <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
-      <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
-        <span className="text-[8px] absolute top-5 right-14 bg-red-500 text-white rounded-full px-2 py-1 text-center">{products.length}</span>
-      </div>  
+        <div className='px-2 ml-4 relative rounded-3xl pl-2  py-2  flex bg-slate-100 gap-1'>
+          <IoIosSearch size={25} className='box-content '/>
+            <input type="text" placeholder='search' value={searchTerm} className='bg-transparent focus:outline-none' 
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+            }}
+              />
+          <IoIosClose className='p-1 box-content bg-white rounded-full' onClick={() => setSearchTerm("")}/>
+        </div>      
+        <div className='flex gap-2 '>
+          <FaRegUser size={25} className='ml-2' onClick={() => setShowpopup(true)}/>
+          <HiOutlineShoppingBag size={25} className='ml-2' onClick={() => setCart(true)}/>
+          <span className="text-[8px] absolute top-5 right-14 bg-red-500 text-white rounded-full px-2 py-1 text-center">{products.length}</span>
+        </div>  
       </div>
     </div>
     {showPopUp && <Log close={setShowpopup}/>}
       {cart && <AddtoCart remove={setCart}/>}
-      {searchTerm && <>
-        <EarbudsItem searchTerm={searchTerm} setTerm={setSearchTerm}/>
-        <Items searchTerm={searchTerm} setTerm={setSearchTerm}/> 
-        <WatchItem searchTerm={searchTerm} />
-        <AllItem searchTerm={searchTerm} />
-        <NeckItem searchTerm={searchTerm} />
-        <BandsItem searchTerm={searchTerm} />
-        <PhoneItem searchTerm={searchTerm}/>
-        <HeadphnItem searchTerm={searchTerm} />
-        <SpeakerItem searchTerm={searchTerm} />
-        <AllspkrItems searchTerm={searchTerm} />
-        <PrtyspkrItem searchTerm={searchTerm}/>
-        <AllprtyItem searchTerm={searchTerm}/>
-        <SoundbarItem searchTerm={searchTerm} />
-        <SoundbarItems searchTerm={searchTerm} />
-      </>}
+      {searchTerm && 
+      // <>
+      //   <EarbudsItem searchTerm={searchTerm} setTerm={setSearchTerm}/>
+      //   <Items searchTerm={searchTerm} setTerm={setSearchTerm}/> 
+      //   <WatchItem searchTerm={searchTerm} />
+      //   <AllItem searchTerm={searchTerm} />
+      //   <NeckItem searchTerm={searchTerm} />
+      //   <BandsItem searchTerm={searchTerm} />
+      //   <PhoneItem searchTerm={searchTerm}/>
+      //   <HeadphnItem searchTerm={searchTerm} />
+      //   <SpeakerItem searchTerm={searchTerm} />
+      //   <AllspkrItems searchTerm={searchTerm} />
+      //   <PrtyspkrItem searchTerm={searchTerm}/>
+      //   <AllprtyItem searchTerm={searchTerm}/>
+      //   <SoundbarItem searchTerm={searchTerm} />
+      //   <SoundbarItems searchTerm={searchTerm} />
+      // </>
+       handleSearch()
+       }
     </>
   )
 }
