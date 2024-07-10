@@ -44,37 +44,6 @@ function App() {
 				<Route path='login' element={<LogIn/>}/>
 			</Routes>
 		</BrowserRouter>
-
-
-		{/* <BrowserRouter>
-			<Routes>
-				<Route
-					path={['/','/wireless-earbuds','/smart-watch','/neckbands','/headphones','/wireless-speaker','/party-speaker','/soundbar','/boat','/signup']} 
-					element = {
-						<>
-							<NavBar />
-							<Route path="/" element={<HomLink />} />
-							<Route path="wireless-earbuds" element={<ViewAll />} />
-							<Route path="smart-watch" element={<AllWatch />} />
-							<Route path="neckbands" element={<AllBands />} />
-							<Route path="headphones" element={<AllheadPhones />} />
-							<Route path="wireless-speaker" element={<AllSpeaker />} />
-							<Route path="party-speaker" element={<AllprtySpkr />} />
-							<Route path="soundbar" element={<AllsoundBar />} />
-							<Route path="/boat" element={<TrulyYours />} />
-							<Route path="/signup" element={<SignUp />} />
-						</>
-					} />
-					<Route 
-						path={['/login']} 
-						element={
-							<>
-								<Route path="/login" element={<LogIn />} />
-							</>
-						} />
-			</Routes>
-		</BrowserRouter> */}
-
       </Context>
 	  
       <Chatbot/>    
