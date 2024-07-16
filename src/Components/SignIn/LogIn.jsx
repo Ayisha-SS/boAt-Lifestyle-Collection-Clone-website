@@ -19,13 +19,7 @@ function LogIn() {
 			setMessage("Please fill out all fields");
 			return;
 		}
-		// const userData = JSON.parse(localStorage.getItem("user_data"));
-
-		// if (!userData) {
-		// 	setMessage("No user data found. Please sign up first.");
-		// 	return;
-		// }
-
+		
 		axios
 			.post(`${BASE_URL}/auth/token/`, {
 				username,
